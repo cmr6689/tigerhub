@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*** HEADER ***/
+.header {
+  background-color: #F76902;
+  padding: 10px;
+}
+
+.logo {
+  width: 144px;
+  height: 75px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.tigerhub {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+.nav {
+  background-color: black;
+}
