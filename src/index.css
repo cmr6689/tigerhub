@@ -38,3 +38,28 @@ code {
 .nav {
   background-color: black;
 }
+
+/**CONTACT PAGE**/
+.contact {
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-appointment {
+  padding: 2em;
+  border-left: black;
+  width: 50%
+}
+
+.convo-message {
+  padding: 2em;
+  width: 50%
+}
+
+.conversations {
+  padding-bottom: 1em;
+}
+
+.new-message {
+  padding-top: 1em;
+}
