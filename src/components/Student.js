@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 function Student() {
     return (
         <div className="student">
-            <span>{props.name}</span>
+            {/*<!--<span>{props.name}</span>-->*/}
         </div>
     );
 }
 
-Student.PropTypes = {
-    name: PropTypes.string.isRequired
-}
+// Student.PropTypes = {
+//     name: PropTypes.string.isRequired
+// }
 
 export default Student;
