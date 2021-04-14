@@ -10,8 +10,8 @@ import {
 
 class Contact extends React.Component {
 
-   constructor() {
-       super();
+    constructor(props) {
+       super(props);
        this.state = {
            showAppointment: true,
            showConversations: true
@@ -27,6 +27,8 @@ class Contact extends React.Component {
             case 'showConversations':
                 this.setState({showConversations: false});
                 break;
+            default:
+                this.setState(this.state);
         }
     }
 
@@ -38,6 +40,8 @@ class Contact extends React.Component {
             case 'showConversations':
                 this.setState({showConversations: true});
                 break;
+            default:
+                this.setState(this.state);
         }
     }
 
