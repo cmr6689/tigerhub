@@ -1,6 +1,17 @@
 import React from 'react';
 import logo from '../images/RIT_logo.png';
 import {Collapse, Nav, Navbar, NavbarToggler, NavItem, NavLink} from "reactstrap";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom';
+import Contact from "./Contact";
+import DiningOrder from "./DiningOrder";
+import Home from "./Home";
+import Finance from "./Finance";
+import DegreePlanning from "./DegreePlanning";
 
 class Header extends React.Component {
 
@@ -31,28 +42,57 @@ class Header extends React.Component {
     renderNavigation() {
         return (
             <div>
+                <Router>
                 <Navbar className='nav' color='black' dark expand='md'>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem color='secondary'>
-                                <NavLink href="/components/">HOME</NavLink>
+                                <Link to='/'>
+                                    <NavLink href="/components/">HOME</NavLink>
+                                </Link>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/components/">DEGREE PLANNING</NavLink>
+                                <Link to='/degree-planning'>
+                                    <NavLink href="/components/">DEGREE PLANNING</NavLink>
+                                </Link>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/components/">FINANCE</NavLink>
+                                <Link to='/finance'>
+                                    <NavLink href="/components/">FINANCE</NavLink>
+                                </Link>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/components/">DINING ORDER</NavLink>
+                                <Link to='/dining-order'>
+                                    <NavLink href="/components/">DINING ORDER</NavLink>
+                                </Link>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/components/">CONTACT ADVISOR</NavLink>
+                                <Link to='/contact'>
+                                    <NavLink href="/components/">CONTACT</NavLink>
+                                </Link>
                             </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
+                    <Switch>
+                        <Route path='/degree-planning'>
+                            <DegreePlanning />
+                        </Route>
+                        <Route path='/finance'>
+                            <Finance />
+                        </Route>
+                        <Route path='/dining-order'>
+                            <DiningOrder />
+                        </Route>
+                        <Route path='/contact'>
+                            <Contact />
+                        </Route>
+                        <Route path='/'>
+                            <Home />
+                        </Route>
+                    </Switch>
+                </Router>
             </div>
         );
     }
