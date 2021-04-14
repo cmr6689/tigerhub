@@ -19,6 +19,14 @@ export default class FinanceTransfer extends React.Component {
         this.props.changeAmount(amount);
     }
 
+    goBack() {
+        this.props.balances();
+    }
+
+    confirm() {
+        this.props.confirm();
+    }
+
     render() {
         return (
             <div>
@@ -49,8 +57,8 @@ export default class FinanceTransfer extends React.Component {
                                 <Input type="amount" id="selectAmount" placeholder="000.00" onChange={(e) => this.sendAmount(e.target.value)}/>
                             </InputGroup>
                         </FormGroup>
-                        <Button color='danger' onClick={this.props.changePage("balances")}>Go Back</Button>
-                        <Button color='success' onClick={this.props.changePage("confirm")}>Submit</Button>
+                        <Button color='danger' onClick={() => this.goBack()}>Go Back</Button>
+                        <Button color='success' onClick={() => this.confirm()}>Submit</Button>
                     </Form>
                 </Container>
             </div>

@@ -7,11 +7,11 @@ export default class FinanceComplete extends React.Component {
     }
 
     toTransfer() {
-        this.props.changePage("transfer");
+        this.props.transfer();
     }
 
     toBalances() {
-        this.props.changePage("balances");
+        this.props.balances();
     }
 
     render() {

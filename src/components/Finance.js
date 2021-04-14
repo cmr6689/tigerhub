@@ -9,37 +9,75 @@ export default class Finance extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            page: "balances",
+            showBalances: true,
+            showTransfer: false,
+            showConfirm: false,
+            showComplete: false,
             account: "default",
             method: "default",
             amount: 0.0
         }
         this.showComponent = this.showComponent.bind(this);
+        this.setAccount = this.setAccount.bind(this);
+        this.setMethod = this.setMethod.bind(this);
+        this.setAmount = this.setAmount.bind(this);
     }
 
     showComponent(name) {
-        this.setState({page: {name}});
+        switch (name) {
+            case "balances":
+                this.setState({showBalances: true, showTransfer: false, showConfirm: false, showComplete: false});
+                break;
+            case "transfer":
+                this.setState({showBalances: false, showTransfer: true, showConfirm: false, showComplete: false});
+                break;
+            case "confirm":
+                this.setState({showBalances: false, showTransfer: false, showConfirm: true, showComplete: false});
+                break;
+            case "complete":
+                this.setState({showBalances: false, showTransfer: false, showConfirm: false, showComplete: true});
+                break;
+            default:
+                this.setState({showBalances: true, showTransfer: false, showConfirm: false, showComplete: false});
+        }
+    }
+
+    showBalances() {
+        this.showComponent("balances");
+    }
+
+    showTransfer() {
+        this.showComponent("transfer");
+    }
+
+    showConfirm() {
+        this.showComponent("confirm");
+    }
+
+    showComplete() {
+        this.showComponent("complete")
     }
 
     setAccount(name) {
-        this.state.account = name;
+        this.setState({account: {name}});
     }
 
     setMethod(name) {
-        this.state.method = name;
+        this.setState({method: {name}});
     }
 
     setAmount(value) {
-        this.state.amount = value;
+        this.setState({amount: {value}});
     }
 
     render() {
+        const {showBalances, showTransfer, showConfirm, showComplete} = this.state;
         return (
             <div>
                 <h1></h1>
                 <div style={{display: 'flex'}}>
                     <FinanceNav callback={this.showComponent}/>
-                    {this.state.page == "balances" && (
+                    {showBalances && (
                             <div>
                                 <Container style={{display: 'flex'}}>
                                     <Card style={{width: '50%'}}>
@@ -69,15 +107,16 @@ export default class Finance extends React.Component {
                                 </Container>
                             </div>
                     )}
-                    {this.state.page == "transfer" && (
+                    {showTransfer && (
                         <FinanceTransfer changeAccount={this.setAccount} changeMethod={this.setMethod} changeAmount={this.setAmount}
-                            changePage={this.showComponent}/>
+                             confirm={this.showConfirm} balances={this.showBalances}/>
                     )}
-                    {this.state.page == "confirm" && (
-                        <FinanceConfirm account={this.state.account} method={this.state.method} amount={this.state.amount} changePage={this.showComponent()}/>
+                    {showConfirm == "confirm" && (
+                        <FinanceConfirm account={this.state.account} method={this.state.method} amount={this.state.amount}
+                            complete={this.showComplete} transfer={this.showTransfer}/>
                     )}
-                    {this.state.page == "complete" && (
-                        <FinanceComplete changePage={this.showComponent}/>
+                    {showComplete == "complete" && (
+                        <FinanceComplete transfer={this.showTransfer} balances={this.showBalances}/>
                     )}
                 </div>
             </div>

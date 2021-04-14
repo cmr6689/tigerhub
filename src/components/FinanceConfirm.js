@@ -7,11 +7,11 @@ export default class FinanceConfirm extends React.Component {
     }
 
     goBack() {
-        this.props.changePage("transfer");
+        this.props.transfer();
     }
 
     complete() {
-        this.props.changePage("complete");
+        this.props.complete();
     }
 
     render() {
