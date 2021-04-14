@@ -18,6 +18,10 @@ export default class Finance extends React.Component {
             amount: 0.0
         }
         this.showComponent = this.showComponent.bind(this);
+        this.showBalances = this.showBalances.bind(this);
+        this.showTransfer = this.showTransfer.bind(this);
+        this.showConfirm = this.showConfirm.bind(this);
+        this.showComplete = this.showComplete.bind(this);
         this.setAccount = this.setAccount.bind(this);
         this.setMethod = this.setMethod.bind(this);
         this.setAmount = this.setAmount.bind(this);
@@ -111,11 +115,11 @@ export default class Finance extends React.Component {
                         <FinanceTransfer changeAccount={this.setAccount} changeMethod={this.setMethod} changeAmount={this.setAmount}
                              confirm={this.showConfirm} balances={this.showBalances}/>
                     )}
-                    {showConfirm == "confirm" && (
+                    {showConfirm && (
                         <FinanceConfirm account={this.state.account} method={this.state.method} amount={this.state.amount}
                             complete={this.showComplete} transfer={this.showTransfer}/>
                     )}
-                    {showComplete == "complete" && (
+                    {showComplete && (
                         <FinanceComplete transfer={this.showTransfer} balances={this.showBalances}/>
                     )}
                 </div>
