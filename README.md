@@ -21,12 +21,13 @@ A better SIS - for students, by students.
 - ```npm run predeploy```
 - ```npm run deploy```
 ## Known Issues
-- Degree Planning Capability incomplete
-- Finance Management Capability incomplete
-- Dining Order Capability incomplete
+- Degree Planning Flowchart and Class Search incomplete
+- Finance Management Capability Transaction History, Transfer Money, Payment Method Management incomplete
+- Dining Order Item Selection, Item Customization, Cart Management, Checkout, Order Confirmation incomplete
 ## Version History
 #v0.1 - Initial Release
 - Add Homepage with Calendar, Agenda and Navbar
+- Add Degree Planning with Flowchart, Recommended Class Registration, Class Search
 - Add Finance Management with only Balances and Money Transfer functionality
 - Add Dining Order with only Time and Restaurant Selection functionality
 - Add Advisor/Professor Messaging in Contact Page
