@@ -39,6 +39,44 @@ code {
   background-color: black;
 }
 
+/**HOME PAGE**/
+.home-page {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-monthly {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+.calendar-agenda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.home-page h2 {
+  padding: 10px;
+}
+
+.calendar-monthly .monthly {
+  border-width: 0;
+  width: 100%;
+  height: 600px;
+  padding: 1em;
+}
+
+.calendar-agenda .agenda {
+  border-width: 0;
+  width: 100%;
+  height: 600px;
+  padding: 1em;
+}
+
 /**CONTACT PAGE**/
 .contact {
   display: flex;
