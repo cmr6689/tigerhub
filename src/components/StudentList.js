@@ -1,11 +1,14 @@
 import React from 'react';
+import Student from "./Student";
 
-function StudentList() {
+
+function StudentList(props) {
     return (
         <div>
-            <h1>Advisor's list of students</h1>
+            {props.Student.map(c => <Student key={c.id} name={c.name} />)}
         </div>
-    );
+    )
+    
 }
 
 export default StudentList;
