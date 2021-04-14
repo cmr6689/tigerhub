@@ -63,3 +63,7 @@ code {
 .new-message {
   padding-top: 1em;
 }
+
+.back-button {
+  margin-bottom: 1em;
+}
