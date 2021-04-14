@@ -5,7 +5,7 @@ import FinanceNav from "./FinanceNav"
 function Finance() {
     return (
         <div>
-            <h1>Finance page</h1>
+            <h1> </h1>
             <div style={{display: 'flex'}}>
                 <FinanceNav />
                 <div>
