@@ -1,7 +1,7 @@
 import React from 'react';
 import {Nav, NavItem, NavLink} from 'reactstrap';
 import {Link, Route} from 'react-router-dom';
-import FinanceTransfer from "./FinanceTransfer";
+import {FinanceTransfer} from "./FinanceTransfer";
 
 function FinanceNav() {
     return(
