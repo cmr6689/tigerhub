@@ -10,6 +10,9 @@ import {
 import Contact from "./Contact";
 import DiningOrder from "./DiningOrder";
 import Home from "./Home";
+import AdvisorHome from "./AdvisorHome";
+import StudentList from "./StudentList";
+import Student from "./Student";
 import Finance from "./Finance";
 import DegreePlanning from "./DegreePlanning";
 
@@ -90,6 +93,15 @@ class Header extends React.Component {
                         </Route>
                         <Route path='/'>
                             <Home />
+                        </Route>
+                        <Route path='/advisor-home'>
+                            <AdvisorHome />
+                        </Route>
+                        <Route path='/student-list'>
+                            <StudentList />
+                        </Route>
+                        <Route path='/student'>
+                            <Student />
                         </Route>
                     </Switch>
                 </Router>
