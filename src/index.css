@@ -105,3 +105,9 @@ code {
 .back-button {
   margin-bottom: 1em;
 }
+
+/**STUDENT LIST**/
+.studentlist {
+  display: flex;
+  justify-content: center;
+}

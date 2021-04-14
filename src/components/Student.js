@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-function Student() {
+function Student(props) {
     return (
         <div className="student">
             <span>{props.name}</span>
@@ -9,7 +9,7 @@ function Student() {
     );
 }
 
-Student.PropTypes = {
+Student.propTypes = {
     name: PropTypes.string.isRequired
 }
 
