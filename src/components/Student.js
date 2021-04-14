@@ -1,11 +1,16 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 function Student() {
     return (
-        <div>
-            <h1>Page for information of generic student</h1>
+        <div className="student">
+            <span>{props.name}</span>
         </div>
     );
+}
+
+Student.PropTypes = {
+    name: PropTypes.string.isRequired
 }
 
 export default Student;

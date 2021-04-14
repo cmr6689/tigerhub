@@ -16,6 +16,13 @@ import Student from "./Student";
 import Finance from "./Finance";
 import DegreePlanning from "./DegreePlanning";
 
+const students = [
+    { id: 1, name: "Student Studentsen" },
+    { id: 2, name: "Lores Ipsum" },
+    { id: 3, name: "Zack Pepper" },
+    { id: 4, name: "Jeff Loepsk" }
+];
+
 class Header extends React.Component {
 
     constructor(props) {
@@ -98,7 +105,7 @@ class Header extends React.Component {
                             <AdvisorHome />
                         </Route>
                         <Route path='/student-list'>
-                            <StudentList />
+                            <StudentList students={students}/>
                         </Route>
                         <Route path='/student'>
                             <Student />
