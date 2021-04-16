@@ -83,14 +83,10 @@ class Header extends React.Component {
                     <DropdownMenu>
                         <Router>
                             <Link to='/tigerhub/student/'>
-                                <NavLink>
-                                    <DropdownItem onClick={() => this.showComponent("signedInStudent")}>Student</DropdownItem>
-                                </NavLink>
+                                <DropdownItem onClick={() => this.showComponent("signedInStudent")}>Student</DropdownItem>
                             </Link>
                             <Link to='/tigerhub/advisor/'>
-                                <NavLink>
-                                    <DropdownItem onClick={() => this.showComponent("signedInAdvisor")}>Advisor</DropdownItem>
-                                </NavLink>
+                                <DropdownItem onClick={() => this.showComponent("signedInAdvisor")}>Advisor</DropdownItem>
                             </Link>
                         </Router>
                     </DropdownMenu>
@@ -108,9 +104,7 @@ class Header extends React.Component {
                 </div>
                 <Router>
                     <Link to='/tigerhub/'>
-                        <NavLink>
-                            <Button className='login' onClick={() => this.showComponent("signedOut")}>Log Out</Button>
-                        </NavLink>
+                        <Button className='login' onClick={() => this.showComponent("signedOut")}>Log Out</Button>
                     </Link>
                 </Router>
             </div>
