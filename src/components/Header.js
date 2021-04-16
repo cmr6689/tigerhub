@@ -81,8 +81,18 @@ class Header extends React.Component {
                         Login
                     </DropdownToggle>
                     <DropdownMenu>
-                        <DropdownItem onClick={() => this.showComponent("signedInStudent")}>Student</DropdownItem>
-                        <DropdownItem onClick={() => this.showComponent("signedInAdvisor")}>Advisor</DropdownItem>
+                        <Router>
+                            <Link to='/tigerhub/student/'>
+                                <NavLink>
+                                    <DropdownItem onClick={() => this.showComponent("signedInStudent")}>Student</DropdownItem>
+                                </NavLink>
+                            </Link>
+                            <Link to='/tigerhub/advisor/'>
+                                <NavLink>
+                                    <DropdownItem onClick={() => this.showComponent("signedInAdvisor")}>Advisor</DropdownItem>
+                                </NavLink>
+                            </Link>
+                        </Router>
                     </DropdownMenu>
                 </UncontrolledButtonDropdown>
             </div>
@@ -96,7 +106,13 @@ class Header extends React.Component {
                     <img className='logo' src={logo} alt='logo' />
                     <h1 className='tigerhub'>TigerHub</h1>
                 </div>
-                <Button className='login' onClick={() => this.showComponent("signedOut")}>Log Out</Button>
+                <Router>
+                    <Link to='/tigerhub/'>
+                        <NavLink>
+                            <Button className='login' onClick={() => this.showComponent("signedOut")}>Log Out</Button>
+                        </NavLink>
+                    </Link>
+                </Router>
             </div>
         );
     }
