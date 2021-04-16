@@ -58,27 +58,27 @@ class Header extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem color='secondary'>
-                                <Link to='/'>
+                                <Link to='/tigerhub'>
                                     <NavLink href="/components/">HOME</NavLink>
                                 </Link>
                             </NavItem>
                             <NavItem>
-                                <Link to='/degree-planning'>
+                                <Link to='/tigerhub/degree-planning'>
                                     <NavLink href="/components/">DEGREE PLANNING</NavLink>
                                 </Link>
                             </NavItem>
                             <NavItem>
-                                <Link to='/finance'>
+                                <Link to='/tigerhub/finance'>
                                     <NavLink href="/components/">FINANCE</NavLink>
                                 </Link>
                             </NavItem>
                             <NavItem>
-                                <Link to='/dining-order'>
+                                <Link to='/tigerhub/dining-order'>
                                     <NavLink href="/components/">DINING ORDER</NavLink>
                                 </Link>
                             </NavItem>
                             <NavItem>
-                                <Link to='/contact'>
+                                <Link to='/tigerhub/contact'>
                                     <NavLink href="/components/">CONTACT</NavLink>
                                 </Link>
                             </NavItem>
@@ -86,29 +86,29 @@ class Header extends React.Component {
                     </Collapse>
                 </Navbar>
                     <Switch>
-                        <Route path='/degree-planning'>
+                        <Route path='/tigerhub/degree-planning'>
                             <DegreePlanning />
                         </Route>
-                        <Route path='/finance'>
+                        <Route path='/tigerhub/finance'>
                             <Finance />
                         </Route>
-                        <Route path='/dining-order'>
+                        <Route path='/tigerhub/dining-order'>
                             <DiningOrder />
                         </Route>
-                        <Route path='/contact'>
+                        <Route path='/tigerhub/contact'>
                             <Contact />
                         </Route>
-                        <Route path='/'>
-                            <Home />
-                        </Route>
-                        <Route path='/advisor-home'>
+                        <Route path='/tigerhub/advisor-home'>
                             <AdvisorHome />
                         </Route>
-                        <Route path='/student-list'>
+                        <Route path='/tigerhub/student-list'>
                             <StudentList students={students}/>
                         </Route>
-                        <Route path='/student'>
+                        <Route path='/tigerhub/student'>
                             <Student />
+                        </Route>
+                        <Route path='/tigerhub'>
+                            <Home />
                         </Route>
                     </Switch>
                 </Router>
