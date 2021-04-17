@@ -23,6 +23,7 @@ import AdvisorHome from "./AdvisorHome";
 import StudentList from "./StudentList";
 import Finance from "./Finance";
 import DegreePlanning from "./DegreePlanning";
+import StudentStudentsen from "./StudentStudensen";
 
 const students = [
     { id: 1, name: "Student Studentsen" },
