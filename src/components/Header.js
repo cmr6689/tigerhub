@@ -225,6 +225,9 @@ class Header extends React.Component {
                         <Route path='/tigerhub/advisor'>
                             <AdvisorHome />
                         </Route>
+                        <Route path='/tigerhub/studentstudentsen'>
+                            <StudentStudentsen />
+                        </Route>
                     </Switch>
                 </Router>
             </div>
