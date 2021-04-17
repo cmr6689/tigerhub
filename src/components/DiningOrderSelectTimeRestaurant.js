@@ -10,7 +10,12 @@ class DiningOrderSelectTimeRestaurant extends Component {
     constructor() {
         super();
     }
-
+    cardTextOverflowStyle = {
+        height: '100%',
+        maxHeight: '100%',
+        overflow: 'hidden',
+        overflowY: 'scroll'
+    }
     render() {
         return (
             <Row>
