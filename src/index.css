@@ -114,6 +114,21 @@ code {
   margin-bottom: 1em;
 }
 
+.message-sent {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appointment-made {
+  width: 50%;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /**STUDENT LIST**/
 .studentlist {
   display: flex;
