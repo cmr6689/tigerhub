@@ -58,7 +58,7 @@ export default class FinanceTransfer extends React.Component {
                             </InputGroup>
                         </FormGroup>
                         <Button color='danger' onClick={(e) => this.goBack()}>Go Back</Button>
-                        <Button color='success' type='submit' onClick={(e) => this.confirm()}>Submit</Button>
+                        <Button color='success' type='submit' style={{marginLeft: "100px"}} onClick={(e) => this.confirm()}>Submit</Button>
                     </Form>
                 </Container>
             </div>

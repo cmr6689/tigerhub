@@ -41,7 +41,7 @@ export default class FinanceConfirm extends React.Component {
                     <p>Some transactions may take multiple business days to complete.</p>
                 </Container>
                 <Button color='danger' onClick={() => this.goBack()}>Go Back</Button>
-                <Button color='success' onClick={() => this.complete()}>Complete</Button>
+                <Button color='success' style={{marginLeft: '300px'}} onClick={() => this.complete()}>Complete</Button>
             </div>
         );
     }
