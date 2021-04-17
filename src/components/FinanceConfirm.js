@@ -11,6 +11,17 @@ export default class FinanceConfirm extends React.Component {
     }
 
     complete() {
+        var account;
+        if (this.props.account == "Dining Dollars") {
+            account = "diningBalance";
+        }
+        else if (this.props.account == "Tiger Bucks") {
+            account = "tigerBalance";
+        }
+        else {
+            account = "academicBalance";
+        }
+        this.props.addMoney(account, this.props.amount);
         this.props.complete();
     }
 

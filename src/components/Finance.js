@@ -15,7 +15,10 @@ export default class Finance extends React.Component {
             showComplete: false,
             account: "Academic Balance",
             method: "KeyBank",
-            amount: 0.0
+            amount: 0.0,
+            academicBalance: 5000.0,
+            diningBalance: 200.0,
+            tigerBalance: 0.0
         };
         this.showComponent = this.showComponent.bind(this);
         this.showBalances = this.showBalances.bind(this);
@@ -26,6 +29,7 @@ export default class Finance extends React.Component {
         this.setMethod = this.setMethod.bind(this);
         this.setAmount = this.setAmount.bind(this);
         this.resetDefaults = this.resetDefaults.bind(this);
+        this.addToAccount = this.addToAccount.bind(this);
     }
 
     showComponent(name) {
@@ -82,6 +86,26 @@ export default class Finance extends React.Component {
         this.setAmount(0.0);
     }
 
+    addToAccount(account, amount) {
+        let currentAmount = this.state.academicBalance;
+        var newAmount;
+        switch (account) {
+            case "diningBalance" :
+                currentAmount = this.state.diningBalance;
+                newAmount = Number(currentAmount) + Number(amount);
+                this.setState({diningBalance: newAmount});
+                break;
+            case "tigerBalance" :
+                currentAmount = this.state.tigerBalance;
+                newAmount = Number(currentAmount) + Number(amount);
+                this.setState({tigerBalance: newAmount});
+                break;
+            default :
+                newAmount = Number(currentAmount) + Number(amount);
+                this.setState({academicBalance: newAmount});
+        }
+    }
+
     render() {
         const {showBalances, showTransfer, showConfirm, showComplete} = this.state;
         return (
@@ -95,7 +119,7 @@ export default class Finance extends React.Component {
                                     <Card style={{width: '50%'}}>
                                         <CardBody>
                                             <CardTitle>Academic Balance</CardTitle>
-                                            <CardText>$5000.00</CardText>
+                                            <CardText>${this.state.academicBalance}</CardText>
                                             <CardLink>See History</CardLink>
                                             <CardLink>Make Payment</CardLink>
                                         </CardBody>
@@ -103,7 +127,7 @@ export default class Finance extends React.Component {
                                     <Card style={{width: '50%'}}>
                                         <CardBody>
                                             <CardTitle>Dining Dollars</CardTitle>
-                                            <CardText>$200.00</CardText>
+                                            <CardText>${this.state.diningBalance}</CardText>
                                             <CardLink>See History</CardLink>
                                             <CardLink>Make Payment</CardLink>
                                         </CardBody>
@@ -111,7 +135,7 @@ export default class Finance extends React.Component {
                                     <Card style={{width: '50%'}}>
                                         <CardBody>
                                             <CardTitle>Tiger Bucks</CardTitle>
-                                            <CardText>$0.00</CardText>
+                                            <CardText>${this.state.tigerBalance}</CardText>
                                             <CardLink>See History</CardLink>
                                             <CardLink>Make Payment</CardLink>
                                         </CardBody>
@@ -125,7 +149,7 @@ export default class Finance extends React.Component {
                     )}
                     {showConfirm && (
                         <FinanceConfirm account={this.state.account} method={this.state.method} amount={this.state.amount}
-                            complete={this.showComplete} transfer={this.showTransfer}/>
+                            complete={this.showComplete} transfer={this.showTransfer} addMoney={this.addToAccount}/>
                     )}
                     {showComplete && (
                         <FinanceComplete transfer={this.showTransfer} balances={this.showBalances}/>
