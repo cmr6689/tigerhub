@@ -59,7 +59,7 @@ class DiningOrder extends Component {
                     <DiningOrderSelectTimeRestaurant
                         rootStyle={this.rootStyle}
                         cardHeightStyle={this.cardHeightStyle}
-                        cartTextOverflowStyle={this.cardTextOverflowStyle}
+                        cardTextOverflowStyle={this.cardTextOverflowStyle}
                         time={this.state.time}
                         setTime={this.setTime.bind(this)}
                         restaurantsVisible={this.state.restaurantsVisible}
