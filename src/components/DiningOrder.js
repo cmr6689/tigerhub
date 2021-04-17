@@ -6,10 +6,15 @@ import commons from '../images/commons.png';
 import gracies from '../images/gracies.png';
 import salsas from '../images/salsas.png';
 import DiningOrderSelectTimeRestaurant from "./DiningOrderSelectTimeRestaurant";
+import DiningOrderSelectItems from "./DiningOrderSelectItems";
 
 class DiningOrder extends Component {
     rootStyle = {
-        overflow: 'hidden'
+        overflow: 'hidden',
+    }
+
+    containerStyle = {
+        maxWidth: '100%'
     }
 
     cardHeightStyle = {
@@ -33,21 +38,42 @@ class DiningOrder extends Component {
         this.state = {
             stage: 0,
             time: -1,
+            restaurantsVisible: false,
             restaurant: -1
         };
     }
 
     setTime(time) {
-        this.setState({time: time});
+        this.setState({time: time, restaurantsVisible: true});
     }
 
     setRestaurant(restaurant) {
-        this.setRestaurant({restaurant: restaurant})
+        this.setState({restaurant: restaurant, stage: 1});
     }
 
     render() {
         return (
-            <div><DiningOrderSelectTimeRestaurant time={this.state.time} setTime={this.setTime} restaurant={this.state.restaurant} setRestaurant={this.setRestaurant}/></div>
+            <div style={this.rootStyle}>
+                <Container style={this.containerStyle}>
+                    {this.state.stage == 0 &&
+                    <DiningOrderSelectTimeRestaurant
+                        rootStyle={this.rootStyle}
+                        cardHeightStyle={this.cardHeightStyle}
+                        cartTextOverflowStyle={this.cardTextOverflowStyle}
+                        time={this.state.time}
+                        setTime={this.setTime.bind(this)}
+                        restaurantsVisible={this.state.restaurantsVisible}
+                        restaurantImgStyle={this.restaurantImgStyle}
+                        setRestaurant={this.setRestaurant.bind(this)}/>
+                    }
+                    {this.state.stage == 1 &&
+                    <DiningOrderSelectItems
+                        rootStyle={this.rootStyle}
+                        restaurant={this.state.restaurant}
+                    />
+                    }
+                </Container>
+            </div>
         );
     }
 }
