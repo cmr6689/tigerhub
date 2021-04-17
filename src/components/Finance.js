@@ -13,10 +13,10 @@ export default class Finance extends React.Component {
             showTransfer: false,
             showConfirm: false,
             showComplete: false,
-            account: "default",
-            method: "default",
+            account: "Academic Balance",
+            method: "KeyBank",
             amount: 0.0
-        }
+        };
         this.showComponent = this.showComponent.bind(this);
         this.showBalances = this.showBalances.bind(this);
         this.showTransfer = this.showTransfer.bind(this);
@@ -25,6 +25,7 @@ export default class Finance extends React.Component {
         this.setAccount = this.setAccount.bind(this);
         this.setMethod = this.setMethod.bind(this);
         this.setAmount = this.setAmount.bind(this);
+        this.resetDefaults = this.resetDefaults.bind(this);
     }
 
     showComponent(name) {
@@ -51,6 +52,7 @@ export default class Finance extends React.Component {
     }
 
     showTransfer() {
+        this.resetDefaults();
         this.showComponent("transfer");
     }
 
@@ -63,15 +65,21 @@ export default class Finance extends React.Component {
     }
 
     setAccount(name) {
-        this.setState({account: {name}});
+        this.setState({account: name});
     }
 
     setMethod(name) {
-        this.setState({method: {name}});
+        this.setState({method: name});
     }
 
     setAmount(value) {
-        this.setState({amount: {value}});
+        this.setState({amount: value});
+    }
+
+    resetDefaults() {
+        this.setAccount("Academic Balance");
+        this.setMethod("KeyBank");
+        this.setAmount(0.0);
     }
 
     render() {
