@@ -13,7 +13,7 @@ export default class Finance extends React.Component {
             showTransfer: false,
             showConfirm: false,
             showComplete: false,
-            account: "American Express",
+            account: "Academic Balance",
             method: "KeyBank",
             amount: 0.0
         };
