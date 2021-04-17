@@ -15,10 +15,16 @@ import {
 function StudentStudentsen() {
     return (
         <div>
+            <div className="printer">
+                <Button id='print' type = "button" color='success' onClick={() => window.print()}>Print</Button>
+            </div>
             <div style={{display: 'flex'}} buffer = '100px'>
                 <img className='stu' src={stu} alt='stu' width='25%'/>
                 <img className='flowchart' src={flowchart} alt='flowchart' width = '30%' />
-                <img className='printer' src={print} alt='printer'/>
+                {/* <img className='printer' src={print} alt='printer' useMap='printBut'/>
+                <map className='printBut' name="printBut" onClick={window.print()}>
+                    <area shape="rect" coords="1860,960,1900,1000" alt="Printer"></area>
+                </map> */}
                 <textarea id="stuInfo" name="stuInfo" readOnly={true}>
                     Name: Student Studentsen
                     UID: 111111111
@@ -31,7 +37,9 @@ function StudentStudentsen() {
             </div>
         </div>
     );
-    
-}
 
+}
+// function printPage(){
+//     return window.print();
+// }
 export default StudentStudentsen;
