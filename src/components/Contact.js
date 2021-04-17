@@ -14,7 +14,8 @@ class Contact extends React.Component {
        super(props);
        this.state = {
            showAppointment: true,
-           showConversations: true
+           showConversations: true,
+           advisorMessageNum: 1
        };
        this.hideComponent = this.hideComponent.bind(this);
    }
@@ -23,6 +24,9 @@ class Contact extends React.Component {
         switch (name) {
             case 'showAppointment':
                 this.setState({showAppointment: false});
+                if (this.state.advisorMessageNum > 0) {
+                    this.state.advisorMessageNum--;
+                }
                 break;
             default:
                 this.setState(this.state);
@@ -86,7 +90,7 @@ class Contact extends React.Component {
                             <ListGroup className='conversations'>
                                 <h2>Conversations</h2>
                                 <Button color='primary' onClick={() => this.hideComponent("showAppointment")}>
-                                    Advisor <Badge pill>1 unread</Badge>
+                                    Advisor <Badge pill>{this.state.advisorMessageNum} unread</Badge>
                                 </Button>
                                 <Button color='primary'>
                                     Professor 3 <Badge pill>0 unread</Badge>
@@ -150,7 +154,7 @@ class Contact extends React.Component {
                             <ListGroup className='conversations'>
                                 <h2>Conversations</h2>
                                 <Button color='primary'>
-                                    Advisor <Badge pill>0 unread</Badge>
+                                    Advisor <Badge pill>{this.state.advisorMessageNum} unread</Badge>
                                 </Button>
                                 <Button color='primary'>
                                     Professor 3 <Badge pill>0 unread</Badge>
