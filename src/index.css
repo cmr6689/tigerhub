@@ -16,6 +16,9 @@ code {
 .header {
   background-color: #F76902;
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .logo {
@@ -33,6 +36,11 @@ code {
   display: inline-block;
   vertical-align: middle;
   padding-left: 10px;
+}
+
+.login {
+  color: white;
+  align-self: flex-start;
 }
 
 .nav {
