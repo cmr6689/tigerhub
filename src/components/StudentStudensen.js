@@ -1,6 +1,9 @@
 import React from 'react';
 import stu from '../images/student.JPG';
 import flowchart from '../images/VSEN Flowchart Version 9.1_2191 curriculum.jpg';
+import print from '../images/printer.png';
+
+
 import {
     Form,
     FormGroup,
@@ -13,9 +16,10 @@ function StudentStudentsen() {
     return (
         <div>
             <div style={{display: 'flex'}} buffer = '100px'>
-                <img className='stu' src={stu} alt='stu' width='25'/>
+                <img className='stu' src={stu} alt='stu' width='25%'/>
                 <img className='flowchart' src={flowchart} alt='flowchart' width = '30%' />
-                <textarea id="stuInfo" name="stuInfo" >
+                <img className='printer' src={print} alt='printer'/>
+                <textarea id="stuInfo" name="stuInfo" readOnly={true}>
                     Name: Student Studentsen
                     UID: 111111111
                     DOB 1/1/2021

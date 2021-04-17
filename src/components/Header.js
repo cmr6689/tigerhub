@@ -209,6 +209,11 @@ class Header extends React.Component {
                                         <NavLink href="/components/">COURSE SEARCH</NavLink>
                                     </Link>
                                 </NavItem>
+                                <NavItem>
+                                    <Link to='/tigerhub/advisor/student-studentsen'>
+                                        <NavLink href="/components/">STUDENT STUDENTSEN</NavLink>
+                                    </Link>
+                                </NavItem>
                             </Nav>
                         </Collapse>
                     </Navbar>
@@ -222,11 +227,11 @@ class Header extends React.Component {
                         <Route path='/tigerhub/advisor/course-search'>
 
                         </Route>
+                        <Route path='/tigerhub/advisor/student-studentsen'>
+                            <StudentStudentsen />
+                        </Route>
                         <Route path='/tigerhub/advisor'>
                             <AdvisorHome />
-                        </Route>
-                        <Route path='/tigerhub/studentstudentsen'>
-                            <StudentStudentsen />
                         </Route>
                     </Switch>
                 </Router>

@@ -119,3 +119,34 @@ code {
   display: flex;
   justify-content: center;
 }
+/**STUDENT STUDENTSEN**/
+.studentstudentsen{
+  display: block;
+
+}
+textarea{
+  height: 250px;
+  resize: none;
+}
+.stu {
+  display: block;
+  height: auto;
+  width: auto;
+  position: absolute;
+  right: 0;
+  top: 180px;
+  ;
+}
+.flowchart{
+  height: 1024;
+  width: 768;
+  position: absolute;
+  left: 510px;
+}
+.printer{
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 100px;
+  right: 40px;
+}
