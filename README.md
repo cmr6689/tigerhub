@@ -1,4 +1,4 @@
-# TigerHub v0.1
+# TigerHub v0.2
 ## SWEN-444 Group Project
 ### Team 5
 - Ben Radley (bdr1224@rit.edu)
@@ -22,9 +22,16 @@ A better SIS - for students, by students.
 - ```npm run deploy```
 ## Known Issues
 - Degree Planning Flowchart and Class Search incomplete
-- Finance Management Capability Transaction History, Transfer Money, Payment Method Management incomplete
-- Dining Order Item Selection, Item Customization, Cart Management, Checkout, Order Confirmation incomplete
+- Finance Management Balances Page 'See History' and 'Make Payment' buttons non-functional 
+- Finance Management Transaction History, Payment Method Management incomplete
+- Dining Order Item Customization incomplete
+- Advisor Home Calendar and Agenda Permissions incorrect
+- Advisor Student List, Email, Course Search, Student Page incomplete
 ## Version History
+#v0.2 - Continued Development
+- Implemented Finance Management Transfer Money
+- Implemented Dining Order Item Selection, Cart Management, Checkout, and Order Confirmation
+- Implemented Sign-In/Sign-Out
 #v0.1 - Initial Release
 - Add Homepage with Calendar, Agenda and Navbar
 - Add Degree Planning with Flowchart, Recommended Class Registration, Class Search
