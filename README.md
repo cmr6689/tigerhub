@@ -6,7 +6,7 @@
 - Daniel Kamvakis (djk5435@rit.edu)
 - Seth Teichman (smt5541@rit.edu)
 - Wyatt Holcombe (wdh5674@rit.edu)
-A better SIS - for students, by students.
+###A better SIS - for students, by students.
 ## Requirements
 - Any Git Command Line
 - An internet connection
@@ -28,11 +28,11 @@ A better SIS - for students, by students.
 - Advisor Home Calendar and Agenda Permissions incorrect
 - Advisor Student List, Email, Course Search, Student Page incomplete
 ## Version History
-#v0.2 - Continued Development
+###v0.2 - Continued Development
 - Implemented Finance Management Transfer Money
 - Implemented Dining Order Item Selection, Cart Management, Checkout, and Order Confirmation
 - Implemented Sign-In/Sign-Out
-#v0.1 - Initial Release
+###v0.1 - Initial Release
 - Add Homepage with Calendar, Agenda and Navbar
 - Add Degree Planning with Flowchart, Recommended Class Registration, Class Search
 - Add Finance Management with only Balances and Money Transfer functionality
