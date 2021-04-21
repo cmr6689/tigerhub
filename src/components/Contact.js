@@ -27,7 +27,7 @@ export default class Contact extends React.Component {
             case 'showAppointment':
                 this.setState({showAppointment: false});
                 if (this.state.advisorMessageNum > 0) {
-                    this.state.advisorMessageNum--;
+                    this.setState({advisorMessageNum: this.state.advisorMessageNum - 1});
                 }
                 break;
             case 'messageSent':
