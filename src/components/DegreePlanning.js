@@ -6,7 +6,7 @@ import {
     FormGroup,
     Label,
     Input,
-    Button, ListGroup, Badge, Col
+    Button
 } from 'reactstrap';
 export default class DegreePlanning extends React.Component {
 

@@ -21,7 +21,6 @@
 - ```npm run predeploy```
 - ```npm run deploy```
 ## Known Issues
-- Degree Planning Flowchart and Class Search incomplete
 - Finance Management Balances Page 'See History' and 'Make Payment' buttons non-functional 
 - Finance Management Transaction History, Payment Method Management incomplete
 - Dining Order Item Customization incomplete
