@@ -85,6 +85,36 @@ code {
   padding: 1em;
 }
 
+/**DEGREE PLANNING**/
+
+.degree-planning {
+  margin: 1em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.degree-left {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.se-flowchart img {
+  max-width: 100%;
+}
+
+.class-search h2 {
+  text-align: center;
+}
+
+.class-search {
+  width: 30%;
+}
+
+#search {
+  border: 2px solid black;
+}
+
 /**CONTACT PAGE**/
 .contact {
   display: flex;
@@ -93,7 +123,7 @@ code {
 
 .schedule-appointment {
   padding: 2em;
-  border-left: black;
+  border-left: 2px black;
   width: 50%
 }
 
@@ -153,8 +183,8 @@ textarea{
   ;
 }
 .flowchart{
-  height: 1024;
-  width: 768;
+  height: 1024px;
+  width: 768px;
   position: absolute;
   left: 510px;
 }
