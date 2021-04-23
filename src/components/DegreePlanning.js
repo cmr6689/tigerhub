@@ -61,13 +61,32 @@ export default class DegreePlanning extends React.Component {
         const {searchRegistered, registered} = this.state;
         return (
             <div className='degree-planning'>
-                <div className='degree-left'>
-                    <div className='se-flowchart'>
-                        <h2 style={{display: 'inline-block'}}>Degree Path/Flowchart</h2>
-                        <p style={{color: 'red'}}>Completed Classes</p>
-                        <p style={{color: 'limegreen'}}>Recommended Classes</p>
-                        <img src={flowchart} alt='flowchart' />
-                    </div>
+                <div className='se-flowchart'>
+                    <h2 style={{display: 'inline-block'}}>Degree Path/Flowchart</h2>
+                    <p style={{color: 'red'}}>Completed Classes</p>
+                    <p style={{color: 'limegreen'}}>Recommended Classes</p>
+                    <img src={flowchart} alt='flowchart' />
+                </div>
+                <div className='degree-right'>
+                    {!searchRegistered && (
+                        <div className='class-search'>
+                            <h2>Class Search</h2>
+                            <div id='search'>
+                                <Search items={classes}
+                                        placeholder='Search for classes'
+                                        maxSelected={1}
+                                        multiple={false} />
+                            </div>
+                            <Button style={{'margin-top': '1em'}} id='confirm' type = "button" color='success' onClick={() => this.showComponent('searchRegistered')}>Register</Button>
+                        </div>
+                    )}
+                    {searchRegistered && (
+                        <div className='class-search'>
+                            <h2>Class Search</h2>
+                            <h3>Successfully Registered!</h3>
+                            <Button color='secondary' onClick={() => this.hideComponent('searchRegistered')}>Back</Button>
+                        </div>
+                    )}
                     {!registered && (
                         <Form className='recommended-classes'>
                             <h2>Recommended Classes</h2>
@@ -87,30 +106,12 @@ export default class DegreePlanning extends React.Component {
                     )}
                     {registered && (
                         <div className='recommended-classes'>
-                            <h2>Successfully Registered!</h2>
+                            <h2>Recommended Classes</h2>
+                            <h3>Successfully Registered!</h3>
                             <Button color='secondary' onClick={() => this.hideComponent('registered')}>Back</Button>
                         </div>
                     )}
                 </div>
-                {!searchRegistered && (
-                    <div className='class-search'>
-                        <h2>Class Search</h2>
-                        <div id='search'>
-                            <Search items={classes}
-                                    placeholder='Search for classes'
-                                    maxSelected={1}
-                                    multiple={false} />
-                        </div>
-                        <Button style={{'margin-top': '1em'}} id='confirm' type = "button" color='success' onClick={() => this.showComponent('searchRegistered')}>Register</Button>
-                    </div>
-                )}
-                {searchRegistered && (
-                    <div className='class-search'>
-                        <h2>Class Search</h2>
-                        <h3>Successfully Registered!</h3>
-                        <Button color='secondary' onClick={() => this.hideComponent('searchRegistered')}>Back</Button>
-                    </div>
-                )}
             </div>
         );
     }

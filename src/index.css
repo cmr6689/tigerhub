@@ -93,9 +93,14 @@ code {
   justify-content: flex-start;
 }
 
-.degree-left {
+.degree-right {
   display: flex;
   flex-direction: column;
+  margin: 1em;
+  width: 30%;
+}
+
+.se-flowchart {
   width: 70%;
 }
 
@@ -115,12 +120,16 @@ code {
   margin-bottom: 0;
 }
 
-.class-search h2 {
+.recommended-classes h2, .recommended-classes h3 {
   text-align: center;
 }
 
-.class-search {
-  width: 30%;
+.recommended-classes {
+  margin-top: 3em;
+}
+
+.class-search h2, .class-search h3 {
+  text-align: center;
 }
 
 #search {
