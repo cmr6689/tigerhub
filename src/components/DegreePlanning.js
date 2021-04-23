@@ -21,6 +21,9 @@ function DegreePlanning() {
         <div className='degree-planning'>
             <div className='degree-left'>
                 <div className='se-flowchart'>
+                    <h2 style={{display: 'inline-block'}}>Degree Path/Flowchart</h2>
+                    <p style={{color: 'red'}}>Completed Classes</p>
+                    <p style={{color: 'limegreen'}}>Recommended Classes</p>
                     <img src={flowchart} alt='flowchart' />
                 </div>
                 <Form className='recommended-classes' width = '25%'>

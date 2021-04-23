@@ -103,6 +103,18 @@ code {
   max-width: 100%;
 }
 
+.se-flowchart h2 {
+  margin-left: 0.5em;
+}
+
+.se-flowchart p {
+  display: inline-block;
+  background-color: black;
+  padding: 10px;
+  margin-left: 1em;
+  margin-bottom: 0;
+}
+
 .class-search h2 {
   text-align: center;
 }
