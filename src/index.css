@@ -136,6 +136,24 @@ code {
   border: 2px solid black;
 }
 
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.courses button {
+  margin-top: 15px;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.chosen-course {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /**CONTACT PAGE**/
 .contact {
   display: flex;
