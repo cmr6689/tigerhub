@@ -57,7 +57,12 @@ export default class DegreePlanning extends React.Component {
     showRecRegister() {
         if (this.state.recommendedClass.length > 0) {
             return (
-                <Button id='confirm' type = "button" color='success' onClick={() => {this.confirmationToggle2()}}>Register</Button>
+                <div>
+                    <Button id='confirm' type = "button" color='success' onClick={() => {this.confirmationToggle2()}}>Register</Button>
+                    <Button color='danger' onClick={() => {
+                        this.setState({recommendedClass: ''});
+                    }}>Cancel</Button>
+                </div>
             )
         }
     }
@@ -75,7 +80,8 @@ export default class DegreePlanning extends React.Component {
                 break;
             case 'searchTermClicked':
                 this.setState({searchTermClicked: true});
-                this.setState({selectedCourse: course})
+                this.setState({selectedCourse: course});
+                this.setState({searchTerm: ''});
                 break;
             default:
                 this.setState(this.state);
@@ -134,21 +140,20 @@ export default class DegreePlanning extends React.Component {
                         )}
                         {searchTermClicked && (
                             <div className='search-results'>
-                                <Form>
-                                    <FormGroup>
-                                        <Button color='secondary' onClick={() => {
-                                            this.hideComponent('searchTermClicked');
-                                            this.setState({searchTerm: ''});
-                                        }}>Back</Button>
-                                    </FormGroup>
-                                    <FormGroup className='chosen-course'>
-                                        <h4>Class to Enroll: </h4>
-                                        <Button color='secondary' disabled>{this.state.selectedCourse}</Button>
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <Button style={{'margin-top': '1em'}} id='confirm' type = "button" color='success' onClick={() => this.confirmationToggle1()}>Register</Button>
-                                    </FormGroup>
-                                </Form>
+                                <div id='search'>
+                                    <Form>
+                                        <Input disabled type='search' name='search' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder='Search for classes' />
+                                    </Form>
+                                </div>
+                                <div className='chosen-course'>
+                                    <h4>Class to Enroll: </h4>
+                                    <Button color='secondary' disabled>{this.state.selectedCourse}</Button>
+                                </div>
+                                <Button style={{'margin-top': '2em'}} id='confirm' type = "button" color='success' onClick={() => this.confirmationToggle1()}>Register</Button>
+                                <Button style={{'margin-top': '2em'}} color='danger' onClick={() => {
+                                    this.hideComponent('searchTermClicked');
+                                    this.setState({searchTerm: ''});
+                                }}>Cancel</Button>
                             </div>
                         )}
                         <Modal isOpen={confirmation1} toggle={() => this.confirmationToggle1()}>
