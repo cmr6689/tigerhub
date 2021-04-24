@@ -6,7 +6,7 @@ import {
     FormGroup,
     Label,
     Input,
-    Button
+    Button, Alert
 } from 'reactstrap';
 export default class DegreePlanning extends React.Component {
 
@@ -68,49 +68,33 @@ export default class DegreePlanning extends React.Component {
                     <img src={flowchart} alt='flowchart' />
                 </div>
                 <div className='degree-right'>
-                    {!searchRegistered && (
-                        <div className='class-search'>
-                            <h2>Class Search</h2>
-                            <div id='search'>
-                                <Search items={classes}
-                                        placeholder='Search for classes'
-                                        maxSelected={1}
-                                        multiple={false} />
-                            </div>
-                            <Button style={{'margin-top': '1em'}} id='confirm' type = "button" color='success' onClick={() => this.showComponent('searchRegistered')}>Register</Button>
+                    <div className='class-search'>
+                        <h2>Class Search</h2>
+                        <div id='search'>
+                            <Search items={classes}
+                                    placeholder='Search for classes'
+                                    maxSelected={1}
+                                    multiple={false} />
                         </div>
-                    )}
-                    {searchRegistered && (
-                        <div className='class-search'>
-                            <h2>Class Search</h2>
-                            <h3>Successfully Registered!</h3>
-                            <Button color='secondary' onClick={() => this.hideComponent('searchRegistered')}>Back</Button>
-                        </div>
-                    )}
-                    {!registered && (
-                        <Form className='recommended-classes'>
-                            <h2>Recommended Classes</h2>
-                            <FormGroup>
-                                <Label for="selectClass">Select Recommended Class</Label>
-                                <Input type="select" name="select" id="selectClass">
-                                    <option> </option>
-                                    <option>SWEN-250 </option>
-                                    <option>CSCI-142</option>
-                                    <option>MATH-182</option>
-                                    <option>MATH-190</option>
-                                    <option>UWRT-150</option>
-                                </Input>
-                            </FormGroup>
-                            <Button id='confirm' type = "button" color='success' onClick={() => this.showComponent('registered')}>Register</Button>
-                        </Form>
-                    )}
-                    {registered && (
-                        <div className='recommended-classes'>
-                            <h2>Recommended Classes</h2>
-                            <h3>Successfully Registered!</h3>
-                            <Button color='secondary' onClick={() => this.hideComponent('registered')}>Back</Button>
-                        </div>
-                    )}
+                        <Button style={{'margin-top': '1em'}} id='confirm' type = "button" color='success' onClick={() => this.showComponent('searchRegistered')}>Register</Button>
+                        <Alert style={{'margin-top': '1em'}} color='success' isOpen={searchRegistered} toggle={() => this.hideComponent('searchRegistered')}>Successfully Registered!</Alert>
+                    </div>
+                    <Form className='recommended-classes'>
+                        <h2>Recommended Classes</h2>
+                        <FormGroup>
+                            <Label for="selectClass">Select Recommended Class</Label>
+                            <Input type="select" name="select" id="selectClass">
+                                <option> </option>
+                                <option>SWEN-250</option>
+                                <option>CSCI-142</option>
+                                <option>MATH-182</option>
+                                <option>MATH-190</option>
+                                <option>UWRT-150</option>
+                            </Input>
+                        </FormGroup>
+                        <Button id='confirm' type = "button" color='success' onClick={() => this.showComponent('registered')}>Register</Button>
+                        <Alert style={{'margin-top': '1em'}} color='success' isOpen={registered} toggle={() => this.hideComponent('registered')}>Successfully Registered!</Alert>
+                    </Form>
                 </div>
             </div>
         );
