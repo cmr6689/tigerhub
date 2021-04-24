@@ -188,7 +188,7 @@ code {
 /**STUDENT STUDENTSEN**/
 .studentstudentsen{
   display: block;
-
+  align-content: center;
 }
 textarea{
   height: 250px;

@@ -209,11 +209,6 @@ class Header extends React.Component {
                                         <NavLink href="/components/">COURSE SEARCH</NavLink>
                                     </Link>
                                 </NavItem>
-                                <NavItem>
-                                    <Link to='/tigerhub/advisor/student-studentsen'>
-                                        <NavLink href="/components/">STUDENT STUDENTSEN</NavLink>
-                                    </Link>
-                                </NavItem>
                             </Nav>
                         </Collapse>
                     </Navbar>

@@ -14,7 +14,7 @@ import {
 
 function StudentList(props) {
     return (
-        <div>
+        <div className="studentList">
             {/* {props.students.map(s => <Student key={s.id} name={s.name} />)} */}
             <Link to='/tigerhub/advisor/student-studentsen'>
                 <NavLink href="/components/">Student Studentsen</NavLink>
