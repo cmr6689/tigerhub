@@ -85,6 +85,57 @@ code {
   padding: 1em;
 }
 
+/**DEGREE PLANNING**/
+
+.degree-planning {
+  margin: 1em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.degree-right {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  width: 30%;
+}
+
+.se-flowchart {
+  width: 70%;
+}
+
+.se-flowchart img {
+  max-width: 100%;
+}
+
+.se-flowchart h2 {
+  margin-left: 0.5em;
+}
+
+.se-flowchart p {
+  display: inline-block;
+  background-color: black;
+  padding: 10px;
+  margin-left: 1em;
+  margin-bottom: 0;
+}
+
+.recommended-classes h2, .recommended-classes h3 {
+  text-align: center;
+}
+
+.recommended-classes {
+  margin-top: 3em;
+}
+
+.class-search h2, .class-search h3 {
+  text-align: center;
+}
+
+#search {
+  border: 2px solid black;
+}
+
 /**CONTACT PAGE**/
 .contact {
   display: flex;
@@ -93,7 +144,7 @@ code {
 
 .schedule-appointment {
   padding: 2em;
-  border-left: black;
+  border-left: 2px black;
   width: 50%
 }
 
@@ -153,8 +204,8 @@ textarea{
   ;
 }
 .flowchart{
-  height: 1024;
-  width: 768;
+  height: 1024px;
+  width: 768px;
   position: absolute;
   left: 510px;
 }

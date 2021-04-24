@@ -1,21 +1,7 @@
 import React, {Component} from 'react';
-import {Container, Row, Col, Table, Button, Card, CardBody, CardTitle, CardText, Media} from "reactstrap";
-import crossroads from '../images/crossroads.png';
-import artesano from '../images/artesano.png';
-import commons from '../images/commons.png';
-import gracies from '../images/gracies.png';
-import salsas from '../images/salsas.png';
+import {Row, Col, Table, Button, Card, CardBody, CardTitle, CardText, Media} from "reactstrap";
 
 class DiningOrderSelectTimeRestaurant extends Component {
-    constructor() {
-        super();
-    }
-    cardTextOverflowStyle = {
-        height: '100%',
-        maxHeight: '100%',
-        overflow: 'hidden',
-        overflowY: 'scroll'
-    }
     render() {
         return (
             <Row>
@@ -26,70 +12,15 @@ class DiningOrderSelectTimeRestaurant extends Component {
                                 <CardTitle>Select Time</CardTitle>
                                 <CardText style={this.props.cardTextOverflowStyle}>
                                     <Table>
-                                        <tr>
-                                            <td>1:00 PM - 1:15 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('1:00 PM - 1:15 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1:15 PM - 1:30 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('1:15 PM - 1:30 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1:30 PM - 1:45 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('1:30 PM - 1:45 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1:45 PM - 2:00 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('1:45 PM - 2:00 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2:00 PM - 2:15 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('2:00 PM - 2:15 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2:15 PM - 2:30 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('2:15 PM - 2:30 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2:30 PM - 2:45 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('2:30 PM - 2:45 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2:45 PM - 3:00 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('2:45 PM - 3:00 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3:00 PM - 3:15 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('3:00 PM - 3:15 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3:15 PM - 3:30 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('3:15 PM - 3:30 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3:30 PM - 3:45 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('3:30 PM - 3:45 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3:45 PM - 4:00 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('3:45 PM - 4:00 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4:00 PM - 4:15 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('4:00 PM - 4:15 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4:15 PM - 4:30 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('4:15 PM - 4:30 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4:30 PM - 4:45 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('4:30 PM - 4:45 PM')}>Select Time</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4:45 PM - 5:00 PM</td>
-                                            <td><Button color="primary" onClick={() => this.props.setTime('4:45 PM - 5:00 PM')}>Select Time</Button></td>
-                                        </tr>
+                                        {this.props.times.map((time) => {
+                                            return (
+                                                <tr>
+                                                    <td>{time}</td>
+                                                    {time !== this.props.time && <td><Button color="primary" onClick={() => this.props.setTime(time)}>Select Time</Button></td>}
+                                                    {time === this.props.time && <td><Button color="success" >Selected Time</Button></td>}
+                                                </tr>
+                                            )
+                                        })}
                                     </Table>
                                 </CardText>
                             </CardBody>
@@ -104,31 +35,18 @@ class DiningOrderSelectTimeRestaurant extends Component {
                                 <CardText style={this.props.cardTextOverflowStyle}>
                                     {!this.props.restaurantsVisible && <center>Select a Time to view Restaurants</center>}
                                     {this.props.restaurantsVisible && <Table>
-                                        <tr>
-                                            <td><Media left middle><Media object src={crossroads} alt={"Crossroads Logo"} style={this.props.restaurantImgStyle}></Media></Media></td>
-                                            <td>Crossroads</td>
-                                            <td><Button color="primary" onClick={() => this.props.setRestaurant('Crossroads')}>Order Here</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><Media left middle><Media object src={salsas} alt={"Salsarita's Logo"} style={this.props.restaurantImgStyle}></Media></Media></td>
-                                            <td>Salsarita's</td>
-                                            <td><Button color="primary" onClick={() => this.props.setRestaurant('Salsarita\'s')}>Order Here</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><Media left middle><Media object src={gracies} alt={"Gracie's Logo"} style={this.props.restaurantImgStyle}></Media></Media></td>
-                                            <td>Gracie's</td>
-                                            <td><Button color="primary" onClick={() => this.props.setRestaurant('Gracie\'s')}>Order Here</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><Media left middle><Media object src={commons} alt={"Commons Logo"} style={this.props.restaurantImgStyle}></Media></Media></td>
-                                            <td>The Commons</td>
-                                            <td><Button color="primary" onClick={() => this.props.setRestaurant('The Commons')}>Order Here</Button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><Media left middle><Media object src={artesano} alt={"Artesano Logo"} style={this.props.restaurantImgStyle}></Media></Media></td>
-                                            <td>Artesano</td>
-                                            <td><Button color="primary" onClick={() => this.props.setRestaurant('Artesano')}>Order Here</Button></td>
-                                        </tr>
+                                        {this.props.restaurants.map((restaurant) => {
+                                            const name = restaurant.name;
+                                            const image = restaurant.image;
+                                            return (
+                                                <tr>
+                                                    <td><Media left middle><Media object src={image} alt={name + " Logo"} style={this.props.restaurantImgStyle}></Media></Media></td>
+                                                    <td>{name}</td>
+                                                    <td><Button color="primary" onClick={() => this.props.setRestaurant(name)}>Order Here</Button></td>
+                                                </tr>
+                                            );
+                                        })
+                                        }
                                     </Table>}
                                 </CardText>
                             </CardBody>
