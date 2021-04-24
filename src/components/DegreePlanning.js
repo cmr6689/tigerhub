@@ -1,6 +1,5 @@
 import React from 'react';
 import flowchart from '../images/VSEN Flowchart Version 9.1_2191 curriculum.jpg';
-import Search from 'react-search';
 import {
     Form,
     FormGroup,
@@ -8,6 +7,7 @@ import {
     Input,
     Button, Alert, Modal, ModalHeader, ModalBody, ModalFooter
 } from 'reactstrap';
+import SearchTermContainer from "./SearchTermContainer";
 export default class DegreePlanning extends React.Component {
 
     constructor(props) {
@@ -16,10 +16,26 @@ export default class DegreePlanning extends React.Component {
             registered: false,
             searchRegistered: false,
             confirmation1: false,
-            confirmation2: false
+            confirmation2: false,
+            courses: [
+                'UWRT-150',
+                'CSCI-142',
+                'SWEN-250',
+                'MATH-182',
+                'MATH-190'
+            ],
+            searchTerm: ''
         }
         this.hideComponent = this.hideComponent.bind(this);
         this.showComponent = this.showComponent.bind(this);
+    }
+
+    editSearchTerm = (e) => {
+        this.setState({searchTerm: e.target.value})
+    }
+
+    search = () => {
+        return this.state.courses.filter(course => course.toLowerCase().includes(this.state.searchTerm.toLowerCase()));
     }
 
     showComponent(name) {
@@ -63,13 +79,6 @@ export default class DegreePlanning extends React.Component {
     }
 
     render() {
-        let classes = [
-            {id: 0, value: 'UWRT-150 8:00AM - 9:00AM'},
-            {id: 1, value: 'CSCI-142 11:00AM - 12:00PM'},
-            {id: 2, value: 'SWEN-250 12:15PM - 1:15PM'},
-            {id: 3, value: 'MATH-182 2:30PM - 3:30PM'},
-            {id: 4, value: 'MATH-190 5:15PM - 6:15PM'}
-        ]
         const {searchRegistered, registered, confirmation1, confirmation2} = this.state;
         return (
             <div className='degree-planning'>
@@ -83,10 +92,8 @@ export default class DegreePlanning extends React.Component {
                     <div className='class-search'>
                         <h2>Class Search</h2>
                         <div id='search'>
-                            <Search items={classes}
-                                    placeholder='Search for classes'
-                                    maxSelected={1}
-                                    multiple={false} />
+                            <input type='text' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder='Search for classes' />
+                            <SearchTermContainer courses = {this.search()} />
                         </div>
                         <Button style={{'margin-top': '1em'}} id='confirm' type = "button" color='success' onClick={() => this.confirmationToggle1()}>Register</Button>
                         <Modal isOpen={confirmation1} toggle={() => this.confirmationToggle1()}>
