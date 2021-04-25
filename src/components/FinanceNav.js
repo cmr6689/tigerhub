@@ -16,19 +16,16 @@ export default class FinanceNav extends React.Component {
             <div>
                 <Nav vertical style={{background: '#DEDEDE'}}>
                     <NavItem style={{border: 'solid'}}>
-                        <NavLink onClick={(e) => this.onLinkClick("balances")}>BALANCES</NavLink>
+                        <NavLink href="#" style={{color: 'black', fontWeight: 'bold'}} onClick={(e) => this.onLinkClick("balances")}>BALANCES</NavLink>
                     </NavItem>
                     <NavItem style={{border: 'solid'}}>
-                        <NavLink>TRANSACTION HISTORY</NavLink>
+                        <NavLink href="#" style={{color: 'black', fontWeight: 'bold'}}>TRANSACTION HISTORY</NavLink>
                     </NavItem>
                     <NavItem style={{border: 'solid'}}>
-                        <NavLink onClick={(e) => this.onLinkClick("transfer")}>TRANSFER MONEY</NavLink>
+                        <NavLink href="#" style={{color: 'black', fontWeight: 'bold'}} onClick={(e) => this.onLinkClick("transfer")}>TRANSFER MONEY</NavLink>
                     </NavItem>
                     <NavItem style={{border: 'solid'}}>
-                        <NavLink>PAYMENT METHODS</NavLink>
-                    </NavItem>
-                    <NavItem style={{border: 'solid'}}>
-                        <NavLink>DINING & TIGER BUCKS</NavLink>
+                        <NavLink href="#" style={{color: 'black', fontWeight: 'bold'}}>PAYMENT METHODS</NavLink>
                     </NavItem>
                 </Nav>
             </div>
