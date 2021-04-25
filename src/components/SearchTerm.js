@@ -9,7 +9,7 @@ export default class SearchTerm extends React.Component {
     render() {
         return (
             <div>
-                <Button color='secondary' onClick={() => this.props.func('searchTermClicked', this.props.course)}>{this.props.course}</Button>
+                <Button color='primary' onClick={() => this.props.func('searchTermClicked', this.props.course)}>{this.props.course}</Button>
             </div>
         )
     }

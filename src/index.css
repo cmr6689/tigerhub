@@ -53,6 +53,11 @@ code {
   justify-content: center;
 }
 
+.loading {
+  margin-top: 5em;
+  margin-bottom: 100%;
+}
+
 .calendar-monthly {
   display: flex;
   flex-direction: column;
@@ -97,15 +102,22 @@ code {
   display: flex;
   flex-direction: column;
   margin: 1em;
-  width: 30%;
+  width: 35%;
 }
 
 .se-flowchart {
-  width: 70%;
+  width: 65%;
 }
 
 .se-flowchart img {
   max-width: 100%;
+}
+
+.flowchart-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .se-flowchart h2 {
@@ -114,10 +126,22 @@ code {
 
 .se-flowchart p {
   display: inline-block;
-  background-color: black;
-  padding: 10px;
-  margin-left: 1em;
+  font-weight: bold;
   margin-bottom: 0;
+}
+
+#p-key-red {
+  border: 2px solid red;
+  margin-left: 1em;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#p-key-green {
+  border: 2px solid limegreen;
+  margin-left: 1em;
+  margin-right: 10px;
+  padding: 10px;
 }
 
 .recommended-classes h2, .recommended-classes h3 {
@@ -136,6 +160,10 @@ code {
   border: 2px solid black;
 }
 
+#selectClass {
+  border: 2px solid black;
+}
+
 .courses {
   display: flex;
   flex-wrap: wrap;
@@ -150,8 +178,16 @@ code {
 .chosen-course {
   margin-top: 2em;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.chosen-course h4 {
+  margin-top: 8px;
+}
+
+.chosen-course button {
+  margin-left: 2em;
 }
 
 #confirm {
@@ -203,10 +239,19 @@ code {
 }
 
 /**STUDENT LIST**/
-.studentlist {
+.studentList {
   display: flex;
   justify-content: center;
 }
+
+.studentSearch {
+  width: 35%;
+}
+
+.studentSearchResults {
+  width: 65%;
+}
+
 /**STUDENT STUDENTSEN**/
 .studentstudentsen{
   display: block;

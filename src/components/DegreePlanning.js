@@ -1,5 +1,5 @@
 import React from 'react';
-import flowchart from '../images/VSEN Flowchart Version 9.1_2191 curriculum.jpg';
+import flowchart from '../images/VSEN Flowchart Version 9.1_2191 curriculum.jpeg';
 import {
     Form,
     FormGroup,
@@ -120,9 +120,13 @@ export default class DegreePlanning extends React.Component {
         return (
             <div className='degree-planning'>
                 <div className='se-flowchart'>
-                    <h2 style={{display: 'inline-block'}}>Degree Path/Flowchart</h2>
-                    <p style={{color: 'red'}}>Completed Classes</p>
-                    <p style={{color: 'limegreen'}}>Recommended Classes</p>
+                    <div className='flowchart-top'>
+                        <h2>Degree Path/Flowchart</h2>
+                        <p id='p-key-red' style={{color: 'red'}}> </p>
+                        <p>= Completed Classes</p>
+                        <p id='p-key-green' style={{color: 'limegreen'}}> </p>
+                        <p>= Recommended Classes</p>
+                    </div>
                     <img src={flowchart} alt='flowchart' />
                 </div>
                 <div className='degree-right'>
@@ -142,12 +146,12 @@ export default class DegreePlanning extends React.Component {
                             <div className='search-results'>
                                 <div id='search'>
                                     <Form>
-                                        <Input disabled type='search' name='search' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder='Search for classes' />
+                                        <Input disabled type='search' name='search' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder={this.state.selectedCourse} />
                                     </Form>
                                 </div>
                                 <div className='chosen-course'>
                                     <h4>Class to Enroll: </h4>
-                                    <Button color='secondary' disabled>{this.state.selectedCourse}</Button>
+                                    <Button color='primary' disabled>{this.state.selectedCourse}</Button>
                                 </div>
                                 <Button style={{'margin-top': '2em'}} id='confirm' type = "button" color='success' onClick={() => this.confirmationToggle1()}>Register</Button>
                                 <Button style={{'margin-top': '2em'}} color='danger' onClick={() => {
