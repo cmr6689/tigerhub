@@ -108,16 +108,35 @@ code {
   max-width: 100%;
 }
 
+.flowchart-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .se-flowchart h2 {
   margin-left: 0.5em;
 }
 
 .se-flowchart p {
   display: inline-block;
-  background-color: black;
-  padding: 10px;
-  margin-left: 1em;
+  font-weight: bold;
   margin-bottom: 0;
+}
+
+#p-key-red {
+  border: 2px solid red;
+  margin-left: 1em;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#p-key-green {
+  border: 2px solid limegreen;
+  margin-left: 1em;
+  margin-right: 10px;
+  padding: 10px;
 }
 
 .recommended-classes h2, .recommended-classes h3 {

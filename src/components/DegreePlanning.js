@@ -120,9 +120,13 @@ export default class DegreePlanning extends React.Component {
         return (
             <div className='degree-planning'>
                 <div className='se-flowchart'>
-                    <h2 style={{display: 'inline-block'}}>Degree Path/Flowchart</h2>
-                    <p style={{color: 'red'}}>Completed Classes</p>
-                    <p style={{color: 'limegreen'}}>Recommended Classes</p>
+                    <div className='flowchart-top'>
+                        <h2>Degree Path/Flowchart</h2>
+                        <p id='p-key-red' style={{color: 'red'}}> </p>
+                        <p>= Completed Classes</p>
+                        <p id='p-key-green' style={{color: 'limegreen'}}> </p>
+                        <p>= Recommended Classes</p>
+                    </div>
                     <img src={flowchart} alt='flowchart' />
                 </div>
                 <div className='degree-right'>
