@@ -24,6 +24,7 @@ import StudentList from "./StudentList";
 import Finance from "./Finance";
 import DegreePlanning from "./DegreePlanning";
 import StudentStudentsen from "./StudentStudensen";
+import gif from '../images/rit-tiger.jpg';
 
 const students = [
     { id: 1, name: "Student Studentsen" },
@@ -116,7 +117,10 @@ class Header extends React.Component {
         return (
             <div>
                 {this.renderHeaderSignedOut()}
-                <h1 style={{textAlign: "center"}}>Please Login to TigerHub</h1>
+                <div className='signed-out'>
+                    <h1 style={{textAlign: "center", marginTop: '1em'}}>Please Login to TigerHub</h1>
+                    <img style={{marginTop: '1em', height: 500}} src={gif} alt='rit gif' />
+                </div>
             </div>
         );
     }
