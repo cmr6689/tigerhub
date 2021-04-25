@@ -241,15 +241,34 @@ code {
 /**STUDENT LIST**/
 .studentList {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 2em;
+  margin-top: 2em;
+}
+
+.studentList h2 {
+  text-align: center;
 }
 
 .studentSearch {
   width: 35%;
 }
 
+.studentSearch #search {
+  margin-top: 1.3em;
+}
+
 .studentSearchResults {
   width: 65%;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.studentSearchResults button {
+  width: 100%;
+  text-align: left;
+  text-indent: 1em;
+  margin-top: 1em;
 }
 
 /**STUDENT STUDENTSEN**/

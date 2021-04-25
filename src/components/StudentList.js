@@ -74,6 +74,7 @@ export default class StudentList extends React.Component {
                 {!this.state.searchTermClicked && (
                     <div className="studentList">
                         <div className='studentSearch'>
+                            <h2>Student Search</h2>
                             <div id='search'>
                                 <Form>
                                     <Input type='search' name='search' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder='Search for students' />
@@ -81,6 +82,7 @@ export default class StudentList extends React.Component {
                             </div>
                         </div>
                         <div className='studentSearchResults'>
+                            <h2>Search Results</h2>
                             {this.showResults()}
                         </div>
                     </div>
