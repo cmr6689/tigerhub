@@ -43,6 +43,10 @@ class DiningOrder extends Component {
         width: '6em'
     }
 
+    reduceLineHeightStyle = {
+        lineHeight: 0.75
+    }
+
     times = [
         '1:00 PM - 1:15 PM',
         '1:15 PM - 1:30 PM',
@@ -118,10 +122,10 @@ class DiningOrder extends Component {
                     {name: 'Banana Peppers'}, {name: 'Sweet Peppers'}, {name: 'Black Olives'}]
             }, {
                 name: 'Extra Protein',
-                options: [{name: 'Ham', price: 2.5}, {name: 'Turkey', price: 2.5}, {name: 'Roast Beef', price: 3},
-                    {name: 'Grilled Chicken', price: 2.0}, {name: 'Crispy Chicken', price: 2.5},
-                    {name: 'Salami', price: 2.0}, {name: 'Capicola', price: 2.0}, {name: 'Tuna Salad', price: 1.75},
-                    {name: 'Chicken Salad', price: 2.0}, {name: 'Hummus', price: 2.5}, {name: 'Bacon', price: 2.0}]
+                options: [{name: 'Extra Ham', price: 2.5}, {name: 'Extra Turkey', price: 2.5}, {name: 'Extra Roast Beef', price: 3},
+                    {name: 'Extra Grilled Chicken', price: 2.0}, {name: 'Extra Crispy Chicken', price: 2.5},
+                    {name: 'Extra Salami', price: 2.0}, {name: 'Extra Capicola', price: 2.0}, {name: 'Extra Tuna Salad', price: 1.75},
+                    {name: 'Extra Chicken Salad', price: 2.0}, {name: 'Extra Hummus', price: 2.5}, {name: 'Extra Bacon', price: 2.0}]
             }
         ]
     }
@@ -207,7 +211,9 @@ class DiningOrder extends Component {
         cost += item.basePrice;
         if (item.customizations.length > 0) {
             item.customizations.forEach((customization) => {
-                cost += customization.price;
+                if (customization.hasOwnProperty('price')) {
+                    cost += customization.price;
+                }
             })
         }
         return cost;
@@ -287,6 +293,7 @@ class DiningOrder extends Component {
                         cardHeightStyle={this.cardHeightStyle}
                         cardTextOverflowStyle={this.cardTextOverflowStyle}
                         buttonStyle={this.selectCategoryButtonStyle}
+                        lineHeightStyle={this.reduceLineHeightStyle}
                         backAction={this.backToSelectTimeRestaurant.bind(this)}
                         restaurant={this.state.restaurant}
                         restaurants={this.menuRestaurants}
@@ -306,6 +313,7 @@ class DiningOrder extends Component {
                         rootStyle={this.rootStyle}
                         cardHeightStyle={this.cardHeightStyle}
                         cardTextOverflowStyle={this.cardTextOverflowStyle}
+                        lineHeightStyle={this.reduceLineHeightStyle}
                         backAction={this.backToSelectItems.bind(this)}
                         time={this.state.time}
                         restaurant={this.state.restaurant}
