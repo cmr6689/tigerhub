@@ -3,9 +3,6 @@ import {Button, Container, Form, FormGroup, Label, Input, InputGroup,
     InputGroupAddon, InputGroupText} from 'reactstrap';
 
 export default class FinanceTransfer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     sendAccount(value) {
         this.props.changeAccount(value);
@@ -57,8 +54,8 @@ export default class FinanceTransfer extends React.Component {
                                 <Input type="amount" id="selectAmount" placeholder="000.00" onChange={(e) => this.sendAmount(e.target.value)}/>
                             </InputGroup>
                         </FormGroup>
-                        <Button color='danger' onClick={(e) => this.goBack()}>Go Back</Button>
-                        <Button color='success' type='submit' style={{marginLeft: "100px"}} onClick={(e) => this.confirm()}>Submit</Button>
+                        <Button color='danger' onClick={() => this.goBack()}>Go Back</Button>
+                        <Button color='success' type='submit' style={{marginLeft: "100px"}} onClick={() => this.confirm()}>Submit</Button>
                     </Form>
                 </Container>
             </div>

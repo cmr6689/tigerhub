@@ -1,16 +1,7 @@
 import React from 'react';
-import Student from "./Student";
-//import props from "props"
 import {
     Form, Input,
-    NavLink
 } from 'reactstrap';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom';
 import StudentSearchContainer from "./StudentSearchContainer";
 import StudentStudentsen from "./StudentStudensen";
 

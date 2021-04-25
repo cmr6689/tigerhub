@@ -1,15 +1,9 @@
 import React from 'react';
 import stu from '../images/student.JPG';
 import flowchart from '../images/VSEN Flowchart Version 9.1_2191 curriculum.jpg';
-import print from '../images/printer.png';
-
 
 import {
-    Form,
-    FormGroup,
-    Label,
-    Input,
-    Button, ListGroup, Badge, Col
+    Button
 } from 'reactstrap';
 import StudentList from "./StudentList";
 

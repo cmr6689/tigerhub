@@ -324,7 +324,7 @@ class DiningOrder extends Component {
                         goToConfirmation={this.goToConfirmation.bind(this)}
                     />
                     }
-                    {this.state.stage == 3 &&
+                    {this.state.stage === 3 &&
                     <DiningOrderConfirmation
                         time={this.state.time}
                         restaurant={this.state.restaurant}

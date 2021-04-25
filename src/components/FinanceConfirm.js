@@ -2,9 +2,6 @@ import React from 'react';
 import {Container, Card, CardBody, CardText, Button} from 'reactstrap';
 
 export default class FinanceConfirm extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     goBack() {
         this.props.transfer();
@@ -12,10 +9,10 @@ export default class FinanceConfirm extends React.Component {
 
     complete() {
         var account;
-        if (this.props.account == "Dining Dollars") {
+        if (this.props.account === "Dining Dollars") {
             account = "diningBalance";
         }
-        else if (this.props.account == "Tiger Bucks") {
+        else if (this.props.account === "Tiger Bucks") {
             account = "tigerBalance";
         }
         else {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Table, Button, Card, CardBody, CardTitle, CardText, Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
+import {Row, Col, Table, Button, Card, CardBody, CardTitle, CardText} from "reactstrap";
 import DiningOrderCustomizeModal from "./DiningOrderCustomizeModal";
 
 class DiningOrderSelectItems extends Component {
@@ -61,6 +61,10 @@ class DiningOrderSelectItems extends Component {
                                                         <td>${item.price.toFixed(2)}</td>
                                                         <td><DiningOrderCustomizeModal item={item} addToCart={this.props.cartAddItem}></DiningOrderCustomizeModal></td>
                                                     </tr>
+                                                )
+                                            } else {
+                                                return (
+                                                    <span> </span>
                                                 )
                                             }
                                         })}

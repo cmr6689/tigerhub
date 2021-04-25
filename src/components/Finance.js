@@ -110,7 +110,7 @@ export default class Finance extends React.Component {
         const {showBalances, showTransfer, showConfirm, showComplete} = this.state;
         return (
             <div>
-                <h1></h1>
+                <h1> </h1>
                 <div style={{display: 'flex'}}>
                     <FinanceNav callback={this.showComponent}/>
                     {showBalances && (

@@ -1,11 +1,7 @@
 import React from 'react';
 import {Nav, NavItem, NavLink} from 'reactstrap';
-import FinanceTransfer from "./FinanceTransfer";
 
 export default class FinanceNav extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     onLinkClick = (value) => {
         this.props.callback(value);

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Table, Button, Card, CardBody, CardTitle, CardText, Media, CardFooter} from "reactstrap";
+import {Row, Col, Table, Button, Card, CardBody, CardTitle, CardText, CardFooter} from "reactstrap";
 
 class DiningOrderCheckout extends Component {
     render() {

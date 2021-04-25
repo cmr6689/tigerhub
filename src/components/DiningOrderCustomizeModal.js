@@ -23,6 +23,9 @@ const DiningOrderCustomizeModal = (props) => {
                     customization = {name: selection.name, value: document.getElementById("customization" + selection.name).value, price: 0};
                 }
                 customizations.push(customization);
+                return (
+                    <span> </span>
+                );
             });
             item.customizations.selectMultiple.map((selection) => {
                 selection.options.map((option) => {
@@ -35,7 +38,13 @@ const DiningOrderCustomizeModal = (props) => {
                         }
                         customizations.push(customization);
                     }
+                    return (
+                        <span> </span>
+                    )
                 })
+                return (
+                    <span> </span>
+                )
             });
         }
         if (document.getElementById("customizationAllergy").value !== "") {

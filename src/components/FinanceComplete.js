@@ -2,9 +2,6 @@ import React from 'react';
 import {Button, Container} from "reactstrap";
 
 export default class FinanceComplete extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     toTransfer() {
         this.props.transfer();
