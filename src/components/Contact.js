@@ -4,7 +4,7 @@ import {
     FormGroup,
     Label,
     Input,
-    Button, ListGroup, Badge, Col
+    Button, ListGroup, Badge, Col, Alert
 
 } from 'reactstrap';
 
@@ -27,7 +27,7 @@ export default class Contact extends React.Component {
             case 'showAppointment':
                 this.setState({showAppointment: false});
                 if (this.state.advisorMessageNum > 0) {
-                    this.state.advisorMessageNum--;
+                    this.setState({advisorMessageNum: this.state.advisorMessageNum - 1});
                 }
                 break;
             case 'messageSent':
@@ -86,15 +86,34 @@ export default class Contact extends React.Component {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="exampleTime">Time</Label>
-                    <Input
-                        type="time"
-                        name="time"
-                        id="exampleTime"
-                        placeholder="time placeholder"
-                    />
+                    <Label for="selectTime">Time</Label>
+                    <Input type="select" name="select" id="selectTime">
+                        <option>--:-- --</option>
+                        <option>9:00 AM</option>
+                        <option>9:15 AM</option>
+                        <option>9:45 AM</option>
+                        <option>10:15 AM</option>
+                        <option>10:30 AM</option>
+                        <option>11:00 AM</option>
+                        <option>11:15 AM</option>
+                        <option>11:30 AM</option>
+                        <option>12:00 PM</option>
+                        <option>12:15 PM</option>
+                        <option>12:30 PM</option>
+                        <option>12:45 PM</option>
+                        <option>2:00 PM</option>
+                        <option>2:15 PM</option>
+                        <option>2:30 PM</option>
+                        <option>3:00 PM</option>
+                        <option>3:15 PM</option>
+                        <option>3:30 PM</option>
+                        <option>3:45 PM</option>
+                        <option>4:15 PM</option>
+                        <option>4:30 PM</option>
+                    </Input>
                 </FormGroup>
                 <Button color='success' onClick={() => this.showComponent('appointmentMade')}>Submit</Button>
+                <Alert style={{'margin-top': '1em'}} color='success' isOpen={this.state.appointmentMade} toggle={() => this.hideComponent('appointmentMade')}>Appointment Confirmed!</Alert>
             </Form>
         )
     }
@@ -127,6 +146,7 @@ export default class Contact extends React.Component {
                     <Input type="textarea" rows='5' name="message" id="message" />
                 </FormGroup>
                 <Button color='success' onClick={() => this.showComponent('messageSent')}>Send Message</Button>
+                <Alert style={{'margin-top': '1em'}} color='success' isOpen={this.state.messageSent} toggle={() => this.hideComponent('messageSent')}>Message Sent!</Alert>
             </Form>
         );
     }
@@ -152,48 +172,19 @@ export default class Contact extends React.Component {
                     <Input type="textarea" rows='5' name="message" id="message" />
                 </FormGroup>
                 <Button color='success' onClick={() => this.showComponent('messageSent')}>Reply</Button>
+                <Alert style={{'margin-top': '1em'}} color='success' isOpen={this.state.messageSent} toggle={() => this.hideComponent('messageSent')}>Reply Sent!</Alert>
+
             </Form>
         );
     }
 
-    appointmentMade() {
-        return (
-            <div className='appointment-made'>
-                <h1>Appointment Confirmed!</h1>
-                <Button color='secondary' onClick={() => this.hideComponent('appointmentMade')}>Schedule Another Appointment</Button>
-            </div>
-        )
-    }
-
-    messageSent() {
-        return (
-            <div className='message-sent'>
-                <h1>Message Sent!</h1>
-                <Button color='secondary' onClick={() => this.hideComponent('messageSent')}>Send Another Message</Button>
-            </div>
-        )
-    }
-
-    replySent() {
-        return (
-            <div className='message-sent'>
-                <h1>Reply Sent!</h1>
-            </div>
-        )
-    }
-
     render() {
-       const {showAppointment, messageSent, appointmentMade} = this.state;
+       const {showAppointment} = this.state;
         return (
             <div>
                 {showAppointment && (
                     <div className='contact'>
-                        {!appointmentMade && (
-                            this.appointment()
-                        )}
-                        {appointmentMade && (
-                            this.appointmentMade()
-                        )}
+                        {this.appointment()}
                         <div className='convo-message'>
                             <ListGroup className='conversations'>
                                 <h2>Conversations</h2>
@@ -204,12 +195,7 @@ export default class Contact extends React.Component {
                                     Advisor <Badge pill>{this.state.advisorMessageNum} unread</Badge>
                                 </Button>
                             </ListGroup>
-                            {!messageSent && (
-                                this.createNewMessage()
-                            )}
-                            {messageSent && (
-                                this.messageSent()
-                            )}
+                            {this.createNewMessage()}
                         </div>
                     </div>
 
@@ -248,12 +234,7 @@ export default class Contact extends React.Component {
                                     Advisor <Badge pill>{this.state.advisorMessageNum} unread</Badge>
                                 </Button>
                             </ListGroup>
-                            {!messageSent && (
-                                this.replyToMessage()
-                            )}
-                            {messageSent && (
-                                this.replySent()
-                            )}
+                            {this.replyToMessage()}
                         </div>
                     </div>
                 )}

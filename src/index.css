@@ -53,6 +53,17 @@ code {
   justify-content: center;
 }
 
+.signed-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading {
+  margin-top: 5em;
+  margin-bottom: 100%;
+}
+
 .calendar-monthly {
   display: flex;
   flex-direction: column;
@@ -85,6 +96,109 @@ code {
   padding: 1em;
 }
 
+/**DEGREE PLANNING**/
+
+.degree-planning {
+  margin: 1em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.degree-right {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  width: 35%;
+}
+
+.se-flowchart {
+  width: 65%;
+}
+
+.se-flowchart img {
+  max-width: 100%;
+}
+
+.flowchart-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.se-flowchart h2 {
+  margin-left: 0.5em;
+}
+
+.se-flowchart p {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+#p-key-red {
+  border: 2px solid red;
+  margin-left: 1em;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#p-key-green {
+  border: 2px solid limegreen;
+  margin-left: 1em;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.recommended-classes h2, .recommended-classes h3 {
+  text-align: center;
+}
+
+.recommended-classes {
+  margin-top: 3em;
+}
+
+.class-search h2, .class-search h3 {
+  text-align: center;
+}
+
+#search {
+  border: 2px solid black;
+}
+
+#selectClass {
+  border: 2px solid black;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.courses button {
+  margin-top: 15px;
+  margin-right: 2em;
+}
+
+.chosen-course {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.chosen-course h4 {
+  margin-top: 8px;
+}
+
+.chosen-course button {
+  margin-left: 2em;
+}
+
+#confirm {
+  margin-right: 1em;
+}
+
 /**CONTACT PAGE**/
 .contact {
   display: flex;
@@ -93,7 +207,7 @@ code {
 
 .schedule-appointment {
   padding: 2em;
-  border-left: black;
+  border-right: 1px solid black;
   width: 50%
 }
 
@@ -130,14 +244,42 @@ code {
 }
 
 /**STUDENT LIST**/
-.studentlist {
+.studentList {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 2em;
+  margin-top: 2em;
 }
+
+.studentList h2 {
+  text-align: center;
+}
+
+.studentSearch {
+  width: 35%;
+}
+
+.studentSearch #search {
+  margin-top: 1.3em;
+}
+
+.studentSearchResults {
+  width: 65%;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.studentSearchResults button {
+  width: 100%;
+  text-align: left;
+  text-indent: 1em;
+  margin-top: 1em;
+}
+
 /**STUDENT STUDENTSEN**/
 .studentstudentsen{
   display: block;
-
+  align-content: center;
 }
 textarea{
   height: 250px;
@@ -153,8 +295,8 @@ textarea{
   ;
 }
 .flowchart{
-  height: 1024;
-  width: 768;
+  height: 1024px;
+  width: 768px;
   position: absolute;
   left: 510px;
 }

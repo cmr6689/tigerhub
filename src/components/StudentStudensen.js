@@ -11,18 +11,37 @@ import {
     Input,
     Button, ListGroup, Badge, Col
 } from 'reactstrap';
+import StudentList from "./StudentList";
 
-function StudentStudentsen() {
-    return (
-        <div>
-            <div className="printer">
-                <Button id='print' type = "button" color='success' onClick={() => window.print()}>Print</Button>
-            </div>
-            <div style={{display: 'flex'}} buffer = '100px'>
-                <img className='flowchart' src={flowchart} alt='flowchart' width = '30%' />
-                <div className="student">
-                    <img className='stu' src={stu} alt='stu' width='25%'/>
-                    <textarea id="stuInfo" name="stuInfo" readOnly={true}>
+class StudentStudentsen extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            backToList: false
+        }
+
+        this.back = this.back.bind(this);
+    }
+
+    back() {
+        this.setState({backToList: true});
+    }
+
+    render() {
+        return (
+            <div>
+                {!this.state.backToList && (
+                    <div>
+                        <Button color='secondary' onClick={() => {this.back('back')}}>Back</Button>
+                        <div className="printer">
+                            <Button id='print' type = "button" color='success' onClick={() => window.print()}>Print</Button>
+                        </div>
+                        <div style={{display: 'flex'}} buffer = '100px'>
+                            <img className='flowchart' src={flowchart} alt='flowchart' width = '30%' />
+                            <div className="student">
+                                <img className='stu' src={stu} alt='stu' width='25%'/>
+                                <textarea id="stuInfo" name="stuInfo" readOnly={true}>
                         Name: Student Studentsen
                         UID: 111111111
                         DOB 1/1/2021
@@ -31,18 +50,22 @@ function StudentStudentsen() {
                         Phone Number: 585-555-5555
                         Student Status: Undergrad
                     </textarea>
-                </div>
-                
-                {/* <img className='printer' src={print} alt='printer' useMap='printBut'/>
+                            </div>
+
+                            {/* <img className='printer' src={print} alt='printer' useMap='printBut'/>
                 <map className='printBut' name="printBut" onClick={window.print()}>
                     <area shape="rect" coords="1860,960,1900,1000" alt="Printer"></area>
                 </map> */}
-            </div>
-        </div>
-    );
+                        </div>
+                    </div>
+                )}
+                {this.state.backToList && (
+                    <StudentList />
+                )}
 
+            </div>
+        );
+    }
 }
-// function printPage(){
-//     return window.print();
-// }
+
 export default StudentStudentsen;

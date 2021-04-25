@@ -16,8 +16,8 @@ class DiningOrderSelectTimeRestaurant extends Component {
                                             return (
                                                 <tr>
                                                     <td>{time}</td>
-                                                    {time !== this.props.time && <td><Button color="primary" onClick={() => this.props.setTime(time)}>Select Time</Button></td>}
-                                                    {time === this.props.time && <td><Button color="success" >Selected Time</Button></td>}
+                                                    {time !== this.props.time && <td><Button color="primary" style={this.props.buttonStyle} onClick={() => this.props.setTime(time)}>Select Time</Button></td>}
+                                                    {time === this.props.time && <td><Button color="success" style={this.props.buttonStyle}>Selected Time</Button></td>}
                                                 </tr>
                                             )
                                         })}
