@@ -35,6 +35,14 @@ class DiningOrder extends Component {
         maxHeight: 128
     }
 
+    selectTimeButtonStyle = {
+        width: '10em'
+    }
+
+    selectCategoryButtonStyle = {
+        width: '6em'
+    }
+
     times = [
         '1:00 PM - 1:15 PM',
         '1:15 PM - 1:30 PM',
@@ -264,6 +272,7 @@ class DiningOrder extends Component {
                         rootStyle={this.rootStyle}
                         cardHeightStyle={this.cardHeightStyle}
                         cardTextOverflowStyle={this.cardTextOverflowStyle}
+                        buttonStyle={this.selectTimeButtonStyle}
                         time={this.state.time}
                         times={this.times}
                         setTime={this.setTime.bind(this)}
@@ -277,6 +286,7 @@ class DiningOrder extends Component {
                         rootStyle={this.rootStyle}
                         cardHeightStyle={this.cardHeightStyle}
                         cardTextOverflowStyle={this.cardTextOverflowStyle}
+                        buttonStyle={this.selectCategoryButtonStyle}
                         backAction={this.backToSelectTimeRestaurant.bind(this)}
                         restaurant={this.state.restaurant}
                         restaurants={this.menuRestaurants}

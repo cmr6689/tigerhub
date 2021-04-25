@@ -29,8 +29,8 @@ class DiningOrderSelectItems extends Component {
                                         return (
                                             <tr>
                                                 <td>{category}</td>
-                                                {category !== this.props.category && <td><Button color={"primary"} onClick={() => this.props.setCategory(category)}>Select</Button></td>}
-                                                {category === this.props.category && <td><Button color={"success"}>Selected</Button></td>}
+                                                {category !== this.props.category && <td><Button color={"primary"} style={this.props.buttonStyle} onClick={() => this.props.setCategory(category)}>Select</Button></td>}
+                                                {category === this.props.category && <td><Button color={"success"} style={this.props.buttonStyle}>Selected</Button></td>}
                                             </tr>
                                         )
                                     })}
