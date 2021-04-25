@@ -26,8 +26,8 @@
 ## Known Issues
 - Finance Balances Page 'See History' and 'Make Payment' buttons non-functional 
 - Finance Transaction History, Payment Method Management incomplete
-- Student Studentsen is the only active Student Profile in Advisor view, is incomplete
-- Advisor Email, Course Search, Student Page incomplete
+- Student Profiles contain same information, display poorly
+- Advisor Email, Course Search incomplete
 ## Version History
 ###v0.3 - Final Presentation Release
 - Implemented Advisor Student List, with one active student (Student Studentsen)
