@@ -1,5 +1,5 @@
 import React from 'react';
-import flowchart from '../images/VSEN Flowchart Version 9.1_2191 curriculum.jpg';
+import flowchart from '../images/VSEN Flowchart Version 9.1_2191 curriculum.jpeg';
 import {
     Form,
     FormGroup,
@@ -146,12 +146,12 @@ export default class DegreePlanning extends React.Component {
                             <div className='search-results'>
                                 <div id='search'>
                                     <Form>
-                                        <Input disabled type='search' name='search' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder='Search for classes' />
+                                        <Input disabled type='search' name='search' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder={this.state.selectedCourse} />
                                     </Form>
                                 </div>
                                 <div className='chosen-course'>
                                     <h4>Class to Enroll: </h4>
-                                    <Button color='secondary' disabled>{this.state.selectedCourse}</Button>
+                                    <Button color='primary' disabled>{this.state.selectedCourse}</Button>
                                 </div>
                                 <Button style={{'margin-top': '2em'}} id='confirm' type = "button" color='success' onClick={() => this.confirmationToggle1()}>Register</Button>
                                 <Button style={{'margin-top': '2em'}} color='danger' onClick={() => {

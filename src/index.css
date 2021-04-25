@@ -102,11 +102,11 @@ code {
   display: flex;
   flex-direction: column;
   margin: 1em;
-  width: 30%;
+  width: 35%;
 }
 
 .se-flowchart {
-  width: 70%;
+  width: 65%;
 }
 
 .se-flowchart img {
@@ -174,8 +174,16 @@ code {
 .chosen-course {
   margin-top: 2em;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.chosen-course h4 {
+  margin-top: 8px;
+}
+
+.chosen-course button {
+  margin-left: 2em;
 }
 
 #confirm {
