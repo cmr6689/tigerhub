@@ -86,13 +86,31 @@ export default class Contact extends React.Component {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="exampleTime">Time</Label>
-                    <Input
-                        type="time"
-                        name="time"
-                        id="exampleTime"
-                        placeholder="time placeholder"
-                    />
+                    <Label for="selectTime">Time</Label>
+                    <Input type="select" name="select" id="selectTime">
+                        <option>--:-- --</option>
+                        <option>9:00 AM</option>
+                        <option>9:15 AM</option>
+                        <option>9:45 AM</option>
+                        <option>10:15 AM</option>
+                        <option>10:30 AM</option>
+                        <option>11:00 AM</option>
+                        <option>11:15 AM</option>
+                        <option>11:30 AM</option>
+                        <option>12:00 PM</option>
+                        <option>12:15 PM</option>
+                        <option>12:30 PM</option>
+                        <option>12:45 PM</option>
+                        <option>2:00 PM</option>
+                        <option>2:15 PM</option>
+                        <option>2:30 PM</option>
+                        <option>3:00 PM</option>
+                        <option>3:15 PM</option>
+                        <option>3:30 PM</option>
+                        <option>3:45 PM</option>
+                        <option>4:15 PM</option>
+                        <option>4:30 PM</option>
+                    </Input>
                 </FormGroup>
                 <Button color='success' onClick={() => this.showComponent('appointmentMade')}>Submit</Button>
                 <Alert style={{'margin-top': '1em'}} color='success' isOpen={this.state.appointmentMade} toggle={() => this.hideComponent('appointmentMade')}>Appointment Confirmed!</Alert>

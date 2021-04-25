@@ -207,7 +207,7 @@ code {
 
 .schedule-appointment {
   padding: 2em;
-  border-left: 2px black;
+  border-right: 1px solid black;
   width: 50%
 }
 
