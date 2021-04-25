@@ -1,10 +1,7 @@
 import React from 'react';
 import {Button} from "reactstrap";
 
-export default class SearchTerm extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+export default class CourseSearchTerm extends React.Component {
 
     render() {
         return (

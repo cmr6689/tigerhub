@@ -7,7 +7,7 @@ import {
     Input,
     Button, Alert, Modal, ModalHeader, ModalBody, ModalFooter
 } from 'reactstrap';
-import SearchTermContainer from "./SearchTermContainer";
+import CourseSearchContainer from "./CourseSearchContainer";
 export default class DegreePlanning extends React.Component {
 
     constructor(props) {
@@ -45,7 +45,7 @@ export default class DegreePlanning extends React.Component {
     showResults() {
         if (this.state.searchTerm.length > 0) {
             return (
-                <SearchTermContainer courses = {this.search()} func = {this.showComponent} />
+                <CourseSearchContainer courses = {this.search()} func = {this.showComponent} />
             )
         }
     }

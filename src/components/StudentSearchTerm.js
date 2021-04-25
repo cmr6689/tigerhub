@@ -2,10 +2,6 @@ import React from 'react';
 import {Button} from "reactstrap";
 
 export default class StudentSearchTerm extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         if (this.props.student === 'Student Studentsen') {
             return (
