@@ -160,6 +160,10 @@ code {
   border: 2px solid black;
 }
 
+#selectClass {
+  border: 2px solid black;
+}
+
 .courses {
   display: flex;
   flex-wrap: wrap;
@@ -235,10 +239,19 @@ code {
 }
 
 /**STUDENT LIST**/
-.studentlist {
+.studentList {
   display: flex;
   justify-content: center;
 }
+
+.studentSearch {
+  width: 35%;
+}
+
+.studentSearchResults {
+  width: 65%;
+}
+
 /**STUDENT STUDENTSEN**/
 .studentstudentsen{
   display: block;
