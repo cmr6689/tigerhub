@@ -6,12 +6,12 @@
 - Daniel Kamvakis (djk5435@rit.edu)
 - Seth Teichman (smt5541@rit.edu)
 - Wyatt Holcombe (wdh5674@rit.edu)
-###A better SIS - for students, by students.
+### A better SIS - for students, by students.
 TigerHub was designed as the SIS that we want, something that we thought would unify and improve our daily workflow. Because we know what it's like to use a mediocre SIS, it was easy figuring out how to improve it!
 ## User Requirements
 - An internet connection
 - Active TigerHub instance (demo available at https://smt5541.github.io/tigerhub)
-###Usage Instructions
+### Usage Instructions
 1. Navigate to site (self-hosted using Development/Self-host Instructions or [the demo](https://smt5541.github.io/tigerhub)).
 2. Log in using the button in the top right corner. Choose your work role.
 3. Choose the desired option, options are different for each role.
@@ -84,10 +84,6 @@ TigerHub was designed as the SIS that we want, something that we thought would u
 - ```git checkout main```
 - ```npm install```
 - ```npm start```
-### Packaging/Deploying to GitHub Pages
-- After Development Setup, you can run the following 2 commands to deploy to GitHub Pages
-- ```npm run predeploy```
-- ```npm run deploy```
 ## Known Issues
 - Functionality unnecessary for demonstration:
     - Finance Balances Page 'See History' and 'Make Payment' buttons non-functional 
