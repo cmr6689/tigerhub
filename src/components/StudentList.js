@@ -3,8 +3,6 @@ import {
     Form, Input,
 } from 'reactstrap';
 import StudentSearchContainer from "./StudentSearchContainer";
-import StudentStudentsen from "./StudentStudensen";
-
 
 export default class StudentList extends React.Component {
 
@@ -61,26 +59,25 @@ export default class StudentList extends React.Component {
 
     render() {
         return (
-            <div>
-                {!this.state.searchTermClicked && (
-                    <div className="studentList">
-                        <div className='studentSearch'>
-                            <h2>Student Search</h2>
-                            <div id='search'>
-                                <Form>
-                                    <Input type='search' name='search' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder='Search for students' />
-                                </Form>
-                            </div>
-                        </div>
-                        <div className='studentSearchResults'>
-                            <h2>Search Results</h2>
-                            {this.showResults()}
+            <div className='student-list-page'>
+                <div className="studentList">
+                    <div className='studentSearch'>
+                        <h2>Student Search</h2>
+                        <div id='search'>
+                            <Form>
+                                <Input type='search' name='search' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder='Search for students' />
+                            </Form>
                         </div>
                     </div>
-                )}
-                {this.state.searchTermClicked && (
-                    <StudentStudentsen />
-                )}
+                    <div className='studentSearchResults'>
+                        {this.showResults()}
+                    </div>
+                </div>
+                <div className='student-info'>
+                    {this.state.searchTermClicked && (
+                        <span>STUDENT STUDENTSEN GOES HERE</span>
+                    )}
+                </div>
             </div>
         );
     }
