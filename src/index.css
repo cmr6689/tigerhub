@@ -244,8 +244,14 @@ code {
 }
 
 /**STUDENT LIST**/
-.studentList {
+.student-list-page {
   display: flex;
+}
+
+.studentList {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   margin-left: 2em;
   margin-top: 2em;
@@ -255,15 +261,11 @@ code {
   text-align: center;
 }
 
-.studentSearch {
-  width: 35%;
-}
-
 .studentSearch #search {
   margin-top: 1.3em;
 }
 
-.studentSearchResults {
+.student-info {
   width: 65%;
   margin-left: 2em;
   margin-right: 2em;
