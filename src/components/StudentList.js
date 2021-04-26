@@ -1,8 +1,11 @@
 import React from 'react';
 import {
+    Button,
     Form, Input,
 } from 'reactstrap';
 import StudentSearchContainer from "./StudentSearchContainer";
+import flowchart from "../images/VSEN Flowchart Version 9.1_2191 curriculum.jpeg";
+import stu from "../images/student.JPG";
 
 export default class StudentList extends React.Component {
 
@@ -57,6 +60,21 @@ export default class StudentList extends React.Component {
         )
     }
 
+    printStudent() {
+        var mywindow = window.open('', "PRINT");
+        mywindow.document.write('<html lang="en"><head><title>' + document.title  + '</title>');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write('<h1>' + "Student Studentsen" + '</h1>');
+        mywindow.document.write(document.getElementById('studentPrint').innerHTML);
+        mywindow.document.write('</body></html>');
+
+        mywindow.document.close();
+        mywindow.focus();
+
+        mywindow.print();
+        mywindow.close();
+    }
+
     render() {
         return (
             <div className='student-list-page'>
@@ -75,7 +93,31 @@ export default class StudentList extends React.Component {
                 </div>
                 <div className='student-info'>
                     {this.state.searchTermClicked && (
-                        <span>STUDENT STUDENTSEN GOES HERE</span>
+                        <div>
+                            <div className="printer">
+                                <Button id='print' type = "button" color='success' onClick={() => this.printStudent()}>Print</Button>
+                            </div>
+                            <div id='studentPrint' className='studentsen-info'>
+                                <div className="student">
+                                    <div className='student-picture'>
+                                        <img className='stu' src={stu} alt='stu'/>
+                                    </div>
+                                    <div className="ta">
+                                        <p>Name: Student Studentsen</p>
+                                        <p>UID: 111111111</p>
+                                        <p>DOB 1/1/2021</p>
+                                        <p>Email: student@rit.edu</p>
+                                        <p>Home Address: 123 Memorial Lomb Dr, Henrietta NY</p>
+                                        <p>Phone Number: 585-555-5555</p>
+                                        <p>Student Status: Undergrad</p>
+                                        <p>Account Holds: None</p>
+                                    </div>
+                                </div>
+                                <div className='flow-picture'>
+                                    <img className='flowchart' src={flowchart} alt='flowchart' />
+                                </div>
+                            </div>
+                        </div>
                     )}
                 </div>
             </div>
