@@ -90,19 +90,19 @@ TigerHub was designed as the SIS that we want, something that we thought would u
     - Finance Transaction History, Payment Method Management incomplete
     - Advisor Email, Course Search incomplete
 ## Version History
-###v0.4 - Final Presentation Release
+### v0.4 - Final Presentation Release
 - Finished implementation of Dining Order Item Customization (and Allergy Specification)
 - Fine tuning to layout and theming
-###v0.3 - More Continued Development
+### v0.3 - More Continued Development
 - Implemented Advisor Student List, with one active student (Student Studentsen)
 - Revised Enrollment/Degree Planning View, implemented Class Search
 - Began implementation of Dining Order Item Customization on the backend
-###v0.2 - Continued Development
+### v0.2 - Continued Development
 - Implemented Finance Management Transfer Money
 - Fixed Advisor Calendar Permissions
 - Implemented Dining Order Item Selection, Cart Management, Checkout, and Order Confirmation
 - Implemented Sign-In/Sign-Out
-###v0.1 - Initial Release
+### v0.1 - Initial Release
 - Add Homepage with Calendar, Agenda and Navbar
 - Add Degree Planning with Flowchart, Recommended Class Registration, Class Search
 - Add Finance Management with only Balances and Money Transfer functionality
