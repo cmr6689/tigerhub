@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Table, Button, Card, CardBody, CardTitle, CardText, Media, CardFooter} from "reactstrap";
+import {Row, Col, Table, Button, Card, CardBody, CardTitle, CardText, CardFooter} from "reactstrap";
 
 class DiningOrderCheckout extends Component {
     render() {
@@ -19,7 +19,7 @@ class DiningOrderCheckout extends Component {
                                     <Table>
                                         <tr>
                                             <td>
-                                                <Table>
+                                                <Table style={this.props.lineHeightStyle}>
                                                     <thead>
                                                     <th>Item</th>
                                                     <th>Price</th>
@@ -28,7 +28,19 @@ class DiningOrderCheckout extends Component {
                                                     {this.props.cart.map((item) => {
                                                         return (
                                                             <tr>
-                                                                <td>{item.name}</td>
+                                                                <td>{item.name}
+                                                                    {item.customizations.map((customization) => {
+                                                                        if (customization.value === true) {
+                                                                            return (
+                                                                                <div><br/>- {customization.name}{(customization.hasOwnProperty('price')&&customization.price!==0) && <span> (+${customization.price.toFixed(2)})</span>}</div>
+                                                                            )
+                                                                        } else {
+                                                                            return (
+                                                                                <div><br/>- {customization.name}: {customization.value}{(customization.hasOwnProperty('price')&&customization.price!==0) && <span> (+${customization.price.toFixed(2)})</span>}</div>
+                                                                            )
+                                                                        }
+                                                                    })}
+                                                                </td>
                                                                 <td>${this.props.calculatePrice(item).toFixed(2)}</td>
                                                                 <td><Button color={"danger"} onClick={() => this.props.cartRemoveItem(item.id)}>Remove</Button></td>
                                                             </tr>

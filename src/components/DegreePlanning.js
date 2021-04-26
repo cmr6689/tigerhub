@@ -1,5 +1,5 @@
 import React from 'react';
-import flowchart from '../images/VSEN Flowchart Version 9.1_2191 curriculum.jpg';
+import flowchart from '../images/VSEN Flowchart Version 9.1_2191 curriculum.jpeg';
 import {
     Form,
     FormGroup,
@@ -7,7 +7,7 @@ import {
     Input,
     Button, Alert, Modal, ModalHeader, ModalBody, ModalFooter
 } from 'reactstrap';
-import SearchTermContainer from "./SearchTermContainer";
+import CourseSearchContainer from "./CourseSearchContainer";
 export default class DegreePlanning extends React.Component {
 
     constructor(props) {
@@ -24,10 +24,14 @@ export default class DegreePlanning extends React.Component {
                 'MATH-182',
                 'MATH-190'
             ],
-            searchTerm: ''
+            searchTerm: '',
+            searchTermClicked: false,
+            selectedCourse: '',
+            recommendedClass: ''
         }
         this.hideComponent = this.hideComponent.bind(this);
         this.showComponent = this.showComponent.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     editSearchTerm = (e) => {
@@ -38,7 +42,32 @@ export default class DegreePlanning extends React.Component {
         return this.state.courses.filter(course => course.toLowerCase().includes(this.state.searchTerm.toLowerCase()));
     }
 
-    showComponent(name) {
+    showResults() {
+        if (this.state.searchTerm.length > 0) {
+            return (
+                <CourseSearchContainer courses = {this.search()} func = {this.showComponent} />
+            )
+        }
+    }
+
+    handleChange(e) {
+        this.setState({recommendedClass: e.target.value});
+    }
+
+    showRecRegister() {
+        if (this.state.recommendedClass.length > 0) {
+            return (
+                <div>
+                    <Button id='confirm' type = "button" color='success' onClick={() => {this.confirmationToggle2()}}>Register</Button>
+                    <Button color='danger' onClick={() => {
+                        this.setState({recommendedClass: ''});
+                    }}>Cancel</Button>
+                </div>
+            )
+        }
+    }
+
+    showComponent(name, course) {
         switch(name) {
             case 'registered':
                 this.setState({registered: true});
@@ -48,6 +77,11 @@ export default class DegreePlanning extends React.Component {
                 break;
             case 'confirmation':
                 this.setState({confirm: true});
+                break;
+            case 'searchTermClicked':
+                this.setState({searchTermClicked: true});
+                this.setState({selectedCourse: course});
+                this.setState({searchTerm: ''});
                 break;
             default:
                 this.setState(this.state);
@@ -65,6 +99,9 @@ export default class DegreePlanning extends React.Component {
             case 'confirmation':
                 this.setState({confirm: true});
                 break;
+            case 'searchTermClicked':
+                this.setState({searchTermClicked: false});
+                break;
             default:
                 this.setState(this.state);
         }
@@ -79,30 +116,59 @@ export default class DegreePlanning extends React.Component {
     }
 
     render() {
-        const {searchRegistered, registered, confirmation1, confirmation2} = this.state;
+        const {searchRegistered, registered, confirmation1, confirmation2, searchTermClicked} = this.state;
         return (
             <div className='degree-planning'>
                 <div className='se-flowchart'>
-                    <h2 style={{display: 'inline-block'}}>Degree Path/Flowchart</h2>
-                    <p style={{color: 'red'}}>Completed Classes</p>
-                    <p style={{color: 'limegreen'}}>Recommended Classes</p>
+                    <div className='flowchart-top'>
+                        <h2>Degree Path/Flowchart</h2>
+                        <p id='p-key-red' style={{color: 'red'}}> </p>
+                        <p>= Completed Classes</p>
+                        <p id='p-key-green' style={{color: 'limegreen'}}> </p>
+                        <p>= Recommended Classes</p>
+                    </div>
                     <img src={flowchart} alt='flowchart' />
                 </div>
                 <div className='degree-right'>
                     <div className='class-search'>
                         <h2>Class Search</h2>
-                        <div id='search'>
-                            <input type='text' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder='Search for classes' />
-                            <SearchTermContainer courses = {this.search()} />
-                        </div>
-                        <Button style={{'margin-top': '1em'}} id='confirm' type = "button" color='success' onClick={() => this.confirmationToggle1()}>Register</Button>
+                        {!searchTermClicked && (
+                            <div>
+                                <div id='search'>
+                                    <Form>
+                                        <Input type='search' name='search' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder='Search for classes' />
+                                    </Form>
+                                </div>
+                                {this.showResults()}
+                            </div>
+                        )}
+                        {searchTermClicked && (
+                            <div className='search-results'>
+                                <div id='search'>
+                                    <Form>
+                                        <Input disabled type='search' name='search' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder={this.state.selectedCourse} />
+                                    </Form>
+                                </div>
+                                <div className='chosen-course'>
+                                    <h4>Class to Enroll: </h4>
+                                    <Button color='primary' disabled>{this.state.selectedCourse}</Button>
+                                </div>
+                                <Button style={{'margin-top': '2em'}} id='confirm' type = "button" color='success' onClick={() => this.confirmationToggle1()}>Register</Button>
+                                <Button style={{'margin-top': '2em'}} color='danger' onClick={() => {
+                                    this.hideComponent('searchTermClicked');
+                                    this.setState({searchTerm: ''});
+                                }}>Cancel</Button>
+                            </div>
+                        )}
                         <Modal isOpen={confirmation1} toggle={() => this.confirmationToggle1()}>
                             <ModalHeader toggle={() => this.confirmationToggle1()}>Confirm Registration</ModalHeader>
-                            <ModalBody>Are you sure you want to register for this class?</ModalBody>
+                            <ModalBody>Are you sure you want to register for {this.state.selectedCourse}?</ModalBody>
                             <ModalFooter>
                                 <Button id='confirm' type = "button" color='success' onClick={() => {
                                     this.showComponent('searchRegistered');
-                                    this.confirmationToggle1()
+                                    this.hideComponent('searchTermClicked');
+                                    this.setState({searchTerm: ''});
+                                    this.confirmationToggle1();
                                 }}>Confirm</Button>
                                 <Button color='danger' onClick={() => this.confirmationToggle1()}>Cancel</Button>
                             </ModalFooter>
@@ -113,21 +179,22 @@ export default class DegreePlanning extends React.Component {
                         <h2>Recommended Classes</h2>
                         <FormGroup>
                             <Label for="selectClass">Select Recommended Class</Label>
-                            <Input type="select" name="select" id="selectClass">
-                                <option> </option>
-                                <option>SWEN-250</option>
-                                <option>CSCI-142</option>
-                                <option>MATH-182</option>
-                                <option>MATH-190</option>
-                                <option>UWRT-150</option>
+                            <Input type='select' value={this.state.recommendedClass} name="select" id="selectClass" onChange={this.handleChange}>
+                                <option value=''> </option>
+                                <option value='SWEN-250'>SWEN-250</option>
+                                <option value='CSCI-142'>CSCI-142</option>
+                                <option value='MATH-182'>MATH-182</option>
+                                <option value='MATH-190'>MATH-190</option>
+                                <option value='UWRT-150'>UWRT-150</option>
                             </Input>
                         </FormGroup>
-                        <Button id='confirm' type = "button" color='success' onClick={() => this.confirmationToggle2()}>Register</Button>
+                        {this.showRecRegister()}
                         <Modal isOpen={confirmation2} toggle={() => this.confirmationToggle2()}>
                             <ModalHeader toggle={() => this.confirmationToggle2()}>Confirm Registration</ModalHeader>
-                            <ModalBody>Are you sure you want to register for this class?</ModalBody>
+                            <ModalBody>Are you sure you want to register for {this.state.recommendedClass}?</ModalBody>
                             <ModalFooter>
                                 <Button id='confirm' type = "button" color='success' onClick={() => {
+                                    this.setState({recommendedClass: ''});
                                     this.showComponent('registered');
                                     this.confirmationToggle2()
                                 }}>Confirm</Button>

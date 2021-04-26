@@ -110,7 +110,7 @@ export default class Finance extends React.Component {
         const {showBalances, showTransfer, showConfirm, showComplete} = this.state;
         return (
             <div>
-                <h1></h1>
+                <h1> </h1>
                 <div style={{display: 'flex'}}>
                     <FinanceNav callback={this.showComponent}/>
                     {showBalances && (
@@ -121,7 +121,7 @@ export default class Finance extends React.Component {
                                             <CardTitle>Academic Balance</CardTitle>
                                             <CardText>${this.state.academicBalance}</CardText>
                                             <CardLink>See History</CardLink>
-                                            <CardLink>Make Payment</CardLink>
+                                            <CardLink href="#" onClick={(e) => this.showTransfer()}>Make Payment</CardLink>
                                         </CardBody>
                                     </Card>
                                     <Card style={{width: '50%'}}>
@@ -129,7 +129,7 @@ export default class Finance extends React.Component {
                                             <CardTitle>Dining Dollars</CardTitle>
                                             <CardText>${this.state.diningBalance}</CardText>
                                             <CardLink>See History</CardLink>
-                                            <CardLink>Make Payment</CardLink>
+                                            <CardLink href="#" onClick={(e) => this.showTransfer()}>Make Payment</CardLink>
                                         </CardBody>
                                     </Card>
                                     <Card style={{width: '50%'}}>
@@ -137,7 +137,7 @@ export default class Finance extends React.Component {
                                             <CardTitle>Tiger Bucks</CardTitle>
                                             <CardText>${this.state.tigerBalance}</CardText>
                                             <CardLink>See History</CardLink>
-                                            <CardLink>Make Payment</CardLink>
+                                            <CardLink href="#" onClick={(e) => this.showTransfer()}>Make Payment</CardLink>
                                         </CardBody>
                                     </Card>
                                 </Container>
