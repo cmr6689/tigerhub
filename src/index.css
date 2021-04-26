@@ -187,26 +187,26 @@ code {
 }
 /**STUDENT STUDENTSEN**/
 .studentstudentsen{
-  display: block;
-  align-content: center;
+  
 }
 textarea{
   height: 250px;
-  resize: none;
+  position: relative;
+  top: 5px;
 }
 .stu {
   display: block;
   height: auto;
   width: auto;
-  position: absolute;
+  position: static;
   right: 0;
   top: 180px;
   ;
 }
 .flowchart{
-  height: 1024px;
-  width: 768px;
-  position: absolute;
+  width: 1024px;
+  height: 768px;
+  position: static;
   left: 510px;
 }
 .printer{

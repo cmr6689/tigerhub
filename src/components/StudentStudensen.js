@@ -21,16 +21,19 @@ function StudentStudentsen() {
             <div style={{display: 'flex'}} buffer = '100px'>
                 <img className='flowchart' src={flowchart} alt='flowchart' width = '30%' />
                 <div className="student">
-                    <img className='stu' src={stu} alt='stu' width='25%'/>
-                    <textarea id="stuInfo" name="stuInfo" readOnly={true}>
-                        Name: Student Studentsen
-                        UID: 111111111
-                        DOB 1/1/2021
-                        Email: student@rit.edu
-                        Home Address: 123 Memorial Lomb Dr, Henrietta NY
-                        Phone Number: 585-555-5555
-                        Student Status: Undergrad
-                    </textarea>
+                    <img className='stu' src={stu} alt='stu'/>
+                    <div className="ta">
+                        <textarea id="stuInfo" name="stuInfo" readOnly={true}>
+                            Name: Student Studentsen
+                            UID: 111111111
+                            DOB 1/1/2021
+                            Email: student@rit.edu
+                            Home Address: 123 Memorial Lomb Dr, Henrietta NY
+                            Phone Number: 585-555-5555
+                            Student Status: Undergrad
+                        </textarea>
+                    </div>
+                    
                 </div>
                 
                 {/* <img className='printer' src={print} alt='printer' useMap='printBut'/>
