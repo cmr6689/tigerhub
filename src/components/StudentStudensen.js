@@ -36,8 +36,8 @@ class StudentStudentsen extends React.Component {
                             <div className="student">
                                 <img className='stu' src={stu} alt='stu' width='25%'/>
                                 <div className="ta">
-                                    <textarea id="stuInfo" name="stuInfo" readOnly={true}>
-                                        Name: Student Studentsen
+                                    <textarea id="stuInfo" name="stuInfo" readOnly={true} rows='7'>
+                                        Name: Student Studentsen 
                                         UID: 111111111
                                         DOB 1/1/2021
                                         Email: student@rit.edu
