@@ -30,7 +30,7 @@ export default class FinanceTransfer extends React.Component {
                 <Container style={{display: 'flex'}}>
                     <Form>
                         <FormGroup>
-                            <Label for="selectAccount">Which account?</Label>
+                            <Label for="selectAccount">RIT Account to Reload</Label>
                             <Input type="select" id="selectAccount" onChange={(e) => this.sendAccount(e.target.value)}>
                                 <option>Academic Balance</option>
                                 <option>Dining Dollars</option>
@@ -38,7 +38,7 @@ export default class FinanceTransfer extends React.Component {
                             </Input>
                         </FormGroup>
                         <FormGroup>
-                            <Label for="selectMethod">Which method?</Label>
+                            <Label for="selectMethod">Payment Method to Charge</Label>
                             <Input type="select" id="selectMethod" onChange={(e) => this.sendMethod(e.target.value)}>
                                 <option>KeyBank</option>
                                 <option>American Express</option>
@@ -46,7 +46,7 @@ export default class FinanceTransfer extends React.Component {
                             </Input>
                         </FormGroup>
                         <FormGroup>
-                            <Label for="enterAmount">How much?</Label>
+                            <Label for="enterAmount">Amount</Label>
                             <InputGroup>
                                 <InputGroupAddon addonType={"prepend"}>
                                     <InputGroupText>$</InputGroupText>
