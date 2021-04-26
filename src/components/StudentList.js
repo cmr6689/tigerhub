@@ -64,7 +64,7 @@ export default class StudentList extends React.Component {
         var mywindow = window.open('', "PRINT");
         mywindow.document.write('<html lang="en"><head><title>' + document.title  + '</title>');
         mywindow.document.write('</head><body >');
-        mywindow.document.write('<h1>' + "Student Studentsen" + '</h1>');
+        mywindow.document.write('<h1>"Student Studentsen</h1>');
         mywindow.document.write(document.getElementById('studentPrint').innerHTML);
         mywindow.document.write('</body></html>');
 
